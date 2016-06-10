@@ -22,71 +22,77 @@
     </script>
   </head>
   <body>
+    <div id="slideout">
+      <i class="fa fa-search fa-3"></i>
+        <div id="slideout_inner">
+          <form>
+            <select onchange="location = this.options[this.selectedIndex].value;">
+              <option value="#abide">Abide</option>
+              <option value="#accord">Accordion</option>
+              <option value="#accord-menu">Accordion Menu</option>
+              <option value="#alerts">Alerts</option>
+              <option value="#badges">Badges</option>
+              <option value="#block-grid">Block Grid</option>
+              <option value="#breadcrumbs">Breadcrumbs</option>
+              <option value="#button">Buttons</option>
+              <option value="#button-group">Button Group</option>
+              <option value="#callout">Callout</option>
+              <option value="#clearing">Clearing</option>
+              <option value="#close-button">Close Button</option>
+              <option value="#drilldown-menu">Drilldown Menu</option>
+              <option value="#dropdown-button">Dropdown Button</option>
+              <option value="#dropdown-menu">Dropdown Menu</option>
+              <option value="#equalizer">Equalizer</option>
+              <option value="#float-classes">Float Classes</option>
+              <option value="#icon-bar">Icon Bar</option>
+              <option value="#inline-list">Inline List</option>
+              <option value="#interchange">Interchange</option>
+              <option value="#joyride">Joyride</option>
+              <option value="#magellan">Magellan</option>
+              <option value="#media-object">Media Object</option>
+              <option value="#menu">Menu</option>
+              <option value="#off-canvas">Off Canvas</option>
+              <option value="#orbit">Orbit</option>
+              <option value="#pagination">Pagination</option>
+              <option value="#pricing-table">Pricing Table</option>
+              <option value="#progress-bar">Progress Bar</option>
+              <option value="#radius-round">Radius/Round</option>
+              <option value="#range-slider">Range Slider</option>
+              <option value="#responsive-menu">Responsive Menu</option>
+              <option value="#responsive-toggle">Responsive Toggle</option>
+              <option value="#reveal">Reveal</option>
+              <option value="#side-nav">Side Nav</option>
+              <option value="#split-button">Split Button</option>
+              <option value="#sticky">Sticky</option>
+              <option value="#sub-nav">Sub Nav</option>
+              <option value="#switches">Switches</option>
+              <option value="#tabs">Tabs</option>
+              <option value="#thumbnail">Thumbnail</option>
+              <option value="#title-bar">Title Bar</option>
+              <option value="#toggler">Toggler</option>
+              <option value="#tooltip">Tooltip</option>
+              <option value="#top-bar">Top Bar</option>
+              <option value="#v-card">V Card</option>
+              <option value="#visibility">Visbility Classes</option>
+            </select>
+          </form>
+  </div>
+</div>
+
+
   <div class="row">
-    <div class="small-12 medium-5 columns">
-      <h1 id="mainTitle">Foundation Differentials</h1> 
-    </div>
-    <div class="small-12 medium-7 columns right" data-sticky-container>
-  <div class="sticky" data-sticky data-margin-top="0">
-        <form style="margin: 2em 0; width:100%;">
-          <select onchange="location = this.options[this.selectedIndex].value;">
-            <option value="#abide">Abide</option>
-            <option value="#accord">Accordion</option>
-            <option value="#accord-menu">Accordion Menu</option>
-            <option value="#alerts">Alerts</option>
-            <option value="#badges">Badges</option>
-            <option value="#block-grid">Block Grid</option>
-            <option value="#breadcrumbs">Breadcrumbs</option>
-            <option value="#button">Buttons</option>
-            <option value="#button-group">Button Group</option>
-            <option value="#callout">Callout</option>
-            <option value="#clearing">Clearing</option>
-            <option value="#close-button">Close Button</option>
-            <option value="#drilldown-menu">Drilldown Menu</option>
-            <option value="#dropdown-button">Dropdown Button</option>
-            <option value="#dropdown-menu">Dropdown Menu</option>
-            <option value="#equalizer">Equalizer</option>
-            <option value="#float-classes">Float Classes</option>
-            <option value="#icon-bar">Icon Bar</option>
-            <option value="#inline-list">Inline List</option>
-            <option value="#interchange">Interchange</option>
-            <option value="#joyride">Joyride</option>
-            <option value="#magellan">Magellan</option>
-            <option value="#media-object">Media Object</option>
-            <option value="#menu">Menu</option>
-            <option value="#off-canvas">Off Canvas</option>
-            <option value="#orbit">Orbit</option>
-            <option value="#pagination">Pagination</option>
-            <option value="#pricing-table">Pricing Table</option>
-            <option value="#progress-bar">Progress Bar</option>
-            <option value="#radius-round">Radius/Round</option>
-            <option value="#range-slider">Range Slider</option>
-            <option value="#responsive-menu">Responsive Menu</option>
-            <option value="#responsive-toggle">Responsive Toggle</option>
-            <option value="#reveal">Reveal</option>
-            <option value="#side-nav">Side Nav</option>
-            <option value="#split-button">Split Button</option>
-            <option value="#sticky">Sticky</option>
-            <option value="#sub-nav">Sub Nav</option>
-            <option value="#switches">Switches</option>
-            <option value="#tabs">Tabs</option>
-            <option value="#thumbnail">Thumbnail</option>
-            <option value="#title-bar">Title Bar</option>
-            <option value="#toggler">Toggler</option>
-            <option value="#tooltip">Tooltip</option>
-            <option value="#top-bar">Top Bar</option>
-            <option value="#v-card">V Card</option>
-            <option value="#visibility">Visbility Classes</option>
-          </select>
-        </form>
-    </div>
+    <div class="small-12 columns">
+      <h1 id="mainTitle">Foundation Differentials</h1>
+      <div class="navigation">
+        <a href="https://github.com/eli-townsend/foundation-changes" target="_blank">Github</a>
+      </div> 
     </div>
   </div>
 
       <div class="row">
         <div class="small-12 medium-12 large-12 columns">
           <label id="entryText">
-            Foundation is a great framework with everything you need out of the box. The issue was Foundation 5 was to big of a file size. Moving to Foundation 6, most of the file size was reduced to make it more managable to download all components. Here is a guide to show what components have changed and how. If they did not change, they are not displayed. The Javascript only works for the Foundation 6 components even though the Foundation 5 components are displayed for visuals. You can download the CSS file that contains only the removed elements. 
+            Foundation is a great framework with everything you need out of the box. Moving to Foundation 6, most of the file size was reduced to make it more managable to download all components. Here is a guide to show what components have changed and how. If they did not change, they are not displayed. The Javascript only works for the Foundation 6 components even though the Foundation 5 components are displayed for visuals. You can download the CSS file that contains only the removed elements.
           </label>
         </div> 
         <div class="small-12 medium-12 large-6 columns text-center">
