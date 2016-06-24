@@ -924,11 +924,16 @@ ul.off-canvas-list {
       border-radius: 0 0 5px 0;
       z-index: 999999;
     }
-    #slideout:hover {
-      right: 200px;
-      z-index: 999999;
-    }
-    #slideout:hover #slideout_inner {
-      right: 0;
-    }
+.slide-open{
+  right:200px !important;
+}
+.open{
+  right:0px !important; 
+}
+.transition{
+  -webkit-transition: right 0.3s ease-out;
+     -moz-transition: right 0.3s ease-out; 
+       -o-transition: right 0.3s ease-out; 
+          transition: right 0.3s ease-out;
+}
     

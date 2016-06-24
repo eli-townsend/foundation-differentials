@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="slideout">
-      <i class="fa fa-search fa-3"></i>
+      <i class="fa fa-search fa-3" id="nav-click"></i>
         <div id="slideout_inner">
           <form>
             <select onchange="location = this.options[this.selectedIndex].value;">
@@ -2717,6 +2717,11 @@
     <script src="js/foundation.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript">
+    $('#nav-click').on('click', function(){
+      $('#slideout').toggleClass('slide-open');
+      $('#slideout_inner').toggleClass('open');
+    })
+
       $(document).foundation();
     </script>
   </body>
