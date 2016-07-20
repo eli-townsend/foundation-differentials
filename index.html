@@ -1,1 +1,2731 @@
-my page
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Here is a guide to show what components have changed from Foundation 5 to Foundation 6">
+    <meta name="keywords" content="HTML,CSS,Foundation,Zurb,Responsive,6,5,JavaScript,Differentials">
+    <meta name="author" content="Elijah Townsend">
+    <title>Foundation Differentials</title>
+    <link rel="stylesheet" href="css/foundation5.css" />
+    <link rel="stylesheet" href="css/foundation6.css" />
+    <link rel="stylesheet" href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="css/app.css" />        
+    <script src="js/vendor/jquery.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75947542-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <div id="slideout">
+      <i class="fa fa-search fa-3" id="nav-click"></i>
+        <div id="slideout_inner">
+          <form>
+            <select onchange="location = this.options[this.selectedIndex].value;">
+              <option value="#abide">Abide</option>
+              <option value="#accord">Accordion</option>
+              <option value="#accord-menu">Accordion Menu</option>
+              <option value="#alerts">Alerts</option>
+              <option value="#badges">Badges</option>
+              <option value="#block-grid">Block Grid</option>
+              <option value="#breadcrumbs">Breadcrumbs</option>
+              <option value="#button">Buttons</option>
+              <option value="#button-group">Button Group</option>
+              <option value="#callout">Callout</option>
+              <option value="#clearing">Clearing</option>
+              <option value="#close-button">Close Button</option>
+              <option value="#drilldown-menu">Drilldown Menu</option>
+              <option value="#dropdown-button">Dropdown Button</option>
+              <option value="#dropdown-menu">Dropdown Menu</option>
+              <option value="#equalizer">Equalizer</option>
+              <option value="#float-classes">Float Classes</option>
+              <option value="#icon-bar">Icon Bar</option>
+              <option value="#inline-list">Inline List</option>
+              <option value="#interchange">Interchange</option>
+              <option value="#joyride">Joyride</option>
+              <option value="#magellan">Magellan</option>
+              <option value="#media-object">Media Object</option>
+              <option value="#menu">Menu</option>
+              <option value="#off-canvas">Off Canvas</option>
+              <option value="#orbit">Orbit</option>
+              <option value="#pagination">Pagination</option>
+              <option value="#pricing-table">Pricing Table</option>
+              <option value="#progress-bar">Progress Bar</option>
+              <option value="#radius-round">Radius/Round</option>
+              <option value="#range-slider">Range Slider</option>
+              <option value="#responsive-menu">Responsive Menu</option>
+              <option value="#responsive-toggle">Responsive Toggle</option>
+              <option value="#reveal">Reveal</option>
+              <option value="#side-nav">Side Nav</option>
+              <option value="#split-button">Split Button</option>
+              <option value="#sticky">Sticky</option>
+              <option value="#sub-nav">Sub Nav</option>
+              <option value="#switches">Switches</option>
+              <option value="#tabs">Tabs</option>
+              <option value="#thumbnail">Thumbnail</option>
+              <option value="#title-bar">Title Bar</option>
+              <option value="#toggler">Toggler</option>
+              <option value="#tooltip">Tooltip</option>
+              <option value="#top-bar">Top Bar</option>
+              <option value="#v-card">V Card</option>
+              <option value="#visibility">Visbility Classes</option>
+            </select>
+          </form>
+  </div>
+</div>
+
+
+  <div class="row">
+    <div class="small-12 columns">
+      <h1 id="mainTitle">Foundation Differentials</h1>
+      <div class="navigation">
+        <a href="https://github.com/eli-townsend/foundation-changes" target="_blank">Github</a>
+      </div> 
+    </div>
+  </div>
+
+      <div class="row">
+        <div class="small-12 medium-12 large-12 columns">
+          <label id="entryText">
+            Foundation is a great framework with everything you need out of the box. Moving to Foundation 6, most of the file size was reduced to make it more managable to download all components. Here is a guide to show what components have changed and how. If they did not change, they are not displayed. The Javascript only works for the Foundation 6 components even though the Foundation 5 components are displayed for visuals. You can download the CSS file that contains only the removed elements.
+          </label>
+        </div> 
+        <div class="small-12 medium-12 large-6 columns text-center">
+             <p>Download the stylesheet for all the components that were removed from Foundation 5.</p>
+             <a href="download/removed-elements.zip" target="_blank" class="custom button">Download</a><br />
+        </div>
+      </div>
+
+
+<div class="row"><hr/>
+  <h1 id="abide">Abide</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <form data-abide>
+      <div class="error">
+        <label for="password" class="error" role="alert">Password <small>required</small>
+          <input type="password" id="password" placeholder="LittleW0men." name="password" required="" data-invalid="" aria-invalid="true">
+        </label>
+        <small class="error">Passwords must be at least 8 characters with 1 capital letter, 1 number, and one special character.</small>
+      </div>
+    </form>
+
+    <span class="badge f6">6</span>
+    <form data-abide>
+      <form data-abide>
+        <!-- Add role="alert" -->
+        <!-- Add "display: block" -->
+        <div data-abide-error role="alert" class="alert callout" style="display: block;">
+          <p><i class="fi-alert"></i> There are some errors in your form.</p>
+        </div>
+        <!-- Add "is-invalid-label" -->
+        <label class="is-invalid-label">
+          Name
+          <!-- Add "is-invalid-input" -->
+          <input type="text" class="is-invalid-input" required aria-invalid aria-describedby="uuid">
+          <!-- Add "is-visible" -->
+          <span class="form-error is-visible" id="uuid">This field is required.</span>
+        </label>
+      </form>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="abide-menu-tabs">
+        <li class="tabs-title is-active"><a href="#abidemenu1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#abidemenu2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="abide-menu-tabs">
+              <div class="tabs-panel is-active" id="abidemenu1">
+                <pre><code>
+&lt;form data-abide&gt;
+  <span class="lowlight">&lt;div class=&quot;name-field&quot;&gt;</span>
+    &lt;label&gt;Your name &lt;small&gt;required&lt;/small&gt;
+      &lt;input type=&quot;text&quot; required pattern=&quot;[a-zA-Z]+&quot;&gt;
+    &lt;/label&gt;
+    <span class="lowlight">&lt;small class=&quot;error&quot;&gt;</span>Name is required and must be a string.<span class="lowlight">&lt;/small&gt;</span>
+  <span class="lowlight">&lt;/div&gt;</span>
+&lt;/form&gt;
+                </code></pre>
+              </div>
+            <div class="tabs-panel" id="abidemenu2">
+                <pre><code>
+&lt;form data-abide <span class="highlight">novalidate</span>&gt;
+  &lt;label&gt;Full Name Required
+    &lt;input type=&quot;text&quot; id=&quot;text&quot; placeholder=&quot;yeti4preZ&quot; aria-describedby=&quot;exampleHelpText&quot; required &gt;
+    <span class="highlight">&lt;span class=&quot;form-error&quot;&gt;
+      I'm required!
+    &lt;/span&gt;</span>
+  &lt;/label&gt;
+  <span class="highlight">&lt;p class=&quot;help-text&quot; id=&quot;exampleHelpText&quot;&gt;</span>Enter your name please.<span class="highlight">&lt;/p&gt;</span>
+&lt;/form&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+
+      <div class="row"><hr/>
+        <h1 id="accord">Accordion</h1>
+        <div class="small-12 medium-6 large-6 columns">
+          <span class="badge f5">5</span>
+            <ul class="accordion" data-accordion>
+              <li class="accordion-navigation">
+                <a href="#panel1a">Accordion 1</a>
+                <div id="panel1a" class="content active">
+                  Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a href="#panel2a">Accordion 2</a>
+                <div id="panel2a" class="content">
+                  Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+              </li>
+              <li class="accordion-navigation">
+                <a href="#panel3a">Accordion 3</a>
+                <div id="panel3a" class="content">
+                  Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </div>
+              </li>
+            </ul>
+<br />
+            <span class="f6 badge">6</span>
+            <ul class="accordion" data-accordion role="tablist">
+              <li class="accordion-item is-active">
+                <a href="#panel1d" role="tab" class="accordion-title" id="panel1d-heading" aria-controls="panel1d">Accordion 1</a>
+                <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel1d-heading">
+                  Panel 1. Lorem ipsum dolor
+                </div>
+              </li>
+              <li class="accordion-item">
+                <a href="#panel2d" role="tab" class="accordion-title" id="panel2d-heading" aria-controls="panel2d">Accordion 2</a>
+                <div id="panel2d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel2d-heading">
+                  Panel 2. Lorem ipsum dolor
+                </div>
+              </li>
+              <li class="accordion-item">
+                <a href="#panel3d" role="tab" class="accordion-title" id="panel3d-heading" aria-controls="panel3d">Accordion 3</a>
+                <div id="panel3d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel3d-heading">
+                  Panel 3. Lorem ipsum dolor
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="small-12 medium-6 large-6 columns">
+            <ul class="tabs" data-tabs id="accordian-tabs">
+              <li class="tabs-title is-active"><a href="#acc1" aria-selected="true">Foundation 5</a></li>
+              <li class="tabs-title"><a href="#acc2">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="accordian-tabs">
+              <div class="tabs-panel is-active" id="acc1">
+                <pre><code>
+&lt;ul class=&quot;accordion&quot; data-accordion&gt;
+  &lt;li class=&quot;accordion-<span class="lowlight">navigation</span>&quot;&gt;
+    &lt;a href=&quot;#panel1a&quot;&gt;Accordion 1&lt;/a&gt;
+    &lt;div id=&quot;panel1a&quot; class=&quot;content <span class="lowlight">active</span>&quot;&gt;
+      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;accordion-<span class="lowlight">navigation</span>&quot;&gt;
+    &lt;a href=&quot;#panel2a&quot;&gt;Accordion 2&lt;/a&gt;
+    &lt;div id=&quot;panel2a&quot; class=&quot;content&quot;&gt;
+      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;accordion-<span class="lowlight">navigation</span>&quot;&gt;
+    &lt;a href=&quot;#panel3a&quot;&gt;Accordion 3&lt;/a&gt;
+    &lt;div id=&quot;panel3a&quot; class=&quot;content&quot;&gt;
+      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="acc2">
+                <pre><code>
+&lt;ul class=&quot;accordion&quot; data-accordion <span class="highlight">role=&quot;tablist&quot;</span>&gt;
+  &lt;li class=&quot;accordion-<span class="highlight">item is-active</span>&quot;&gt;
+    &lt;a href=&quot;#panel1d&quot; <span class="highlight">role=&quot;tab&quot;</span> <span class="highlight">class=&quot;accordion-title&quot;</span> <span class="highlight">id=&quot;panel1d-heading&quot;</span> <span class="highlight">aria-controls=&quot;panel1d&quot;</span>&gt;Accordion 1&lt;/a&gt;
+    &lt;div id=&quot;panel1d&quot; class=&quot;<span class="highlight">accordion-</span>content&quot; <span class="highlight">role=&quot;tabpanel&quot;</span> <span class="highlight">data-tab-content</span> <span class="highlight">aria-labelledby=&quot;panel1d-heading&quot;</span>&gt;
+      Panel 1. Lorem ipsum dolor
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class=&quot;accordion-<span class="highlight">item is-active</span>&quot;&gt;
+    &lt;a href=&quot;#panel2d&quot; <span class="highlight">role=&quot;tab&quot;</span> <span class="highlight">class=&quot;accordion-title&quot;</span> <span class="highlight">id=&quot;panel2d-heading&quot;</span> <span class="highlight">aria-controls=&quot;panel2d&quot;</span>&gt;Accordion 2&lt;/a&gt;
+    &lt;div id=&quot;panel2d&quot; class=&quot;<span class="highlight">accordion-</span>content&quot; <span class="highlight">role=&quot;tabpanel&quot;</span> <span class="highlight">data-tab-content</span> <span class="highlight">aria-labelledby=&quot;panel2d-heading&quot;</span>&gt;
+      Panel 2. Lorem ipsum dolor
+    &lt;/div&gt;
+  &lt;/li&gt;
+    &lt;li class=&quot;accordion-<span class="highlight">item is-active</span>&quot;&gt;
+    &lt;a href=&quot;#panel3d&quot; <span class="highlight">role=&quot;tab&quot;</span> <span class="highlight">class=&quot;accordion-title&quot;</span> <span class="highlight">id=&quot;panel1d-heading&quot;</span> <span class="highlight">aria-controls=&quot;panel3d&quot;</span>&gt;Accordion 3&lt;/a&gt;
+    &lt;div id=&quot;panel3d&quot; class=&quot;<span class="highlight">accordion-</span>content&quot; <span class="highlight">role=&quot;tabpanel&quot;</span> <span class="highlight">data-tab-content</span> <span class="highlight">aria-labelledby=&quot;panel3d-heading&quot;</span>&gt;
+      Panel 3. Lorem ipsum dolor
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+        </div>
+      </div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="accord-menu"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="New Feature!"><i class="fa fa-star"></i></span> Accordion Menu</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <ul class="vertical menu" data-accordion-menu>
+      <li>
+        <a href="#">Item 1</a>
+        <ul class="menu vertical nested is-active">
+          <li>
+            <a href="#">Item 1A</a>
+            <ul class="menu vertical nested">
+              <li><a href="#">Item 1Ai</a></li>
+              <li><a href="#">Item 1Aii</a></li>
+              <li><a href="#">Item 1Aiii</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Item 1B</a></li>
+          <li><a href="#">Item 1C</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Item 2</a>
+        <ul class="menu vertical nested">
+          <li><a href="#">Item 2A</a></li>
+          <li><a href="#">Item 2B</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 3</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="accordian-menu-tabs">
+              <li class="tabs-title is-active"><a href="#accmenu1" aria-selected="true">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="accordian-menu-tabs">
+              <div class="tabs-panel is-active" id="accmenu1">
+                <pre><code>
+&lt;ul class=&quot;vertical menu&quot; data-accordion-menu&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;
+    &lt;ul class=&quot;menu vertical nested is-active&quot;&gt;
+      &lt;li&gt;
+        &lt;a href=&quot;#&quot;&gt;Item 1A&lt;/a&gt;
+        &lt;ul class=&quot;menu vertical nested&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1Ai&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1Aii&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1Aiii&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1B&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1C&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;
+    &lt;ul class=&quot;menu vertical nested&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2A&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2B&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+          <h1 id="alerts">Alerts</h1>
+          <div class="small-12 medium-6 large-6 columns">
+            <div data-alert class="alert-box">
+              <h5>This is a Foundation 5 Alert</h5>
+              <a href="#" class="close">&times;</a>
+            </div>
+
+            <div class="alert callout" data-closable>
+              <h5>This is a Foundation 6 Alert</h5>
+              <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <ul class="tabs" data-tabs id="alert-tabs">
+              <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Foundation 5</a></li>
+              <li class="tabs-title"><a href="#panel2">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="alert-tabs">
+              <div class="tabs-panel is-active" id="panel1">
+                <pre><code><!--<div id="f5alert"> <a class="copy-code" onclick="copy('f5alert')"><i class="fa fa-copy fa-2x"></i></a>-->
+&lt;div class=&quot;alert<span class="lowlight">-box</span>&quot; data-<span class="lowlight">alert</span>&gt;
+   &lt;h5&gt;This is a Foundation 5 Alert&lt;/h5&gt;
+   <span class="lowlight">&lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;</span>
+&lt;/div&gt;
+                <!--</div>--></code></pre>
+              </div>
+              <div class="tabs-panel" id="panel2">
+                <pre><code><!--<div id="f6alert"> <a class="copy-code" onclick="copy('f6alert')"><i class="fa fa-copy fa-2x"></i></a>-->
+&lt;div class=&quot;alert <span class="highlight">callout</span>&quot; data-<span class="highlight">closable</span>&gt;
+   &lt;h5&gt;This is a Foundation 6 Alert&lt;/h5&gt;
+   <span class="highlight">&lt;button class=&quot;close-button&quot; aria-label=&quot;Dismiss alert&quot; type=&quot;button&quot; data-close&gt;
+      &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+   &lt;/button&gt;</span>
+&lt;/div&gt;
+               <!--<div>--> </code></pre>
+              </div>
+            </div>
+</div>
+        </div>
+
+
+<div class="row"><hr/>
+  <h1 id="badges"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="New Feature!"><i class="fa fa-star"></i></span> Badge</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="secondary badge">2</span>
+    <span class="success badge">3</span>
+    <span class="alert badge">A</span>
+    <span class="warning badge">B</span>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="accordian-menu-tabs">
+              <li class="tabs-title is-active"><a href="#accmenu1" aria-selected="true">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="accordian-menu-tabs">
+              <div class="tabs-panel is-active" id="accmenu1">
+                <pre><code>
+&lt;span class=&quot;secondary badge&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;success badge&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;alert badge&quot;&gt;A&lt;/span&gt;
+&lt;span class=&quot;warning badge&quot;&gt;B&lt;/span&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="block-grid">Block Grid</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+      <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+        <li><img src="http://placehold.it/350x150"></li>
+        <li><img src="http://placehold.it/350x150"></li>
+        <li><img src="http://placehold.it/350x150"></li>
+        <li><img src="http://placehold.it/350x150"></li>
+        <li><img src="http://placehold.it/350x150"></li>
+        <li><img src="http://placehold.it/350x150"></li>
+      </ul>
+    <span class="badge f6">6</span>
+    <div class="row small-up-1 medium-up-2 large-up-4">
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+      <div class="column">
+        <img src="http://placehold.it/300x300" class="thumbnail" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+     <ul class="tabs" data-tabs id="blockgrid-tabs">
+        <li class="tabs-title is-active"><a href="#blockgrid1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#blockgrid2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="blockgrid-tabs">
+              <div class="tabs-panel is-active" id="blockgrid1">
+                <pre><code>
+&lt;ul class=&quot;breadcrumbs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="lowlight">unavailable</span>&quot;&gt;<span class="lowlight">&lt;a href=&quot;#&quot;&gt;</span>Gene Splicing<span class="lowlight">&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;current&quot;&gt;</span><span class="lowlight">&lt;a href=&quot;#&quot;&gt;</span>Cloning<span class="lowlight">&lt;/a&gt;</span>&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="blockgrid2">
+                <pre><code>
+<span class="highlight">&lt;nav aria-label=&quot;You are here:&quot; role=&quot;navigation&quot;&gt;</span>
+  &lt;ul class=&quot;breadcrumbs&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;<span class="highlight">disabled</span>&quot;&gt;Gene Splicing&lt;/li&gt;
+    &lt;li&gt;
+      <span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;</span>Current: <span class="highlight">&lt;/span&gt;</span> Cloning
+    &lt;/li&gt;
+  &lt;/ul&gt;
+<span class="highlight">&lt;/nav&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="breadcrumbs">Breadcrumbs</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="breadcrumbs">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li class="unavailable"><a href="#">Gene Splicing</a></li>
+      <li class="current"><a href="#">Cloning</a></li>
+    </ul>
+    <span class="f6 badge">6</span>
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs" style="background:transparent;border:0;">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li class="disabled">Gene Splicing</li>
+        <li>
+          <span class="show-for-sr">Current: </span> Cloning
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="breadcrumbs-tabs">
+        <li class="tabs-title is-active"><a href="#brcrb1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#brcrb2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="breadcrumbs-tabs">
+              <div class="tabs-panel is-active" id="brcrb1">
+                <pre><code>
+&lt;ul class=&quot;breadcrumbs&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="lowlight">unavailable</span>&quot;&gt;<span class="lowlight">&lt;a href=&quot;#&quot;&gt;</span>Gene Splicing<span class="lowlight">&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;current&quot;&gt;</span><span class="lowlight">&lt;a href=&quot;#&quot;&gt;</span>Cloning<span class="lowlight">&lt;/a&gt;</span>&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="brcrb2">
+                <pre><code>
+<span class="highlight">&lt;nav aria-label=&quot;You are here:&quot; role=&quot;navigation&quot;&gt;</span>
+  &lt;ul class=&quot;breadcrumbs&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Features&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;<span class="highlight">disabled</span>&quot;&gt;Gene Splicing&lt;/li&gt;
+    &lt;li&gt;
+      <span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;</span>Current: <span class="highlight">&lt;/span&gt;</span> Cloning
+    &lt;/li&gt;
+  &lt;/ul&gt;
+<span class="highlight">&lt;/nav&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="button">Button</h1>
+  <p>Buttons are called the same way as Foundation 5, just some new features. The classes .round and .radius are removed from Foundation 6.</p>
+    <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <a href="#" class="button round">Round Button</a>
+    <a href="#" class="button radius">Radius Button</a>
+    <br />
+    <span class="badge f6">6</span>
+      <button class="hollow button" href="#">Primary Color</button>
+      <button class="secondary hollow button" href="#">Secondary Color</button>
+      <button class="success hollow button" href="#">Success Color</button>
+      <button class="alert hollow button" href="#">Alert Color</button>
+      <button class="warning hollow button" href="#">Warning Color</button>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="button-tabs">
+        <li class="tabs-title is-active"><a href="#button1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#button2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="button-tabs">
+              <div class="tabs-panel is-active" id="button1">
+                <pre><code>
+<span class="lowlight">&lt;a href=&quot;#&quot; class=&quot;button round&quot;&gt;Round Button&lt;/a&gt;</span>
+<span class="lowlight">&lt;a href=&quot;#&quot; class=&quot;button radius&quot;&gt;Radius Button&lt;/a&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="button2">
+                <pre><code>
+&lt;button class=&quot;<span class="highlight">hollow</span> button&quot; href=&quot;#&quot;&gt;Primary Color&lt;/button&gt;
+&lt;button class=&quot;secondary <span class="highlight">hollow</span> button&quot; href=&quot;#&quot;&gt;Secondary Color&lt;/button&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="button-group">Button Group</h1>
+    <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="button-group">
+      <li><a href="#" class="button">Button 1</a></li>
+      <li><a href="#" class="button">Button 2</a></li>
+      <li><a href="#" class="button">Button 3</a></li>
+    </ul>
+    <span class="badge f6">6</span>
+      <div class="button-group">
+        <a class="button">One</a>
+        <a class="button">Two</a>
+        <a class="button">Three</a>
+      </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="buttong-tabs">
+        <li class="tabs-title is-active"><a href="#buttong1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#buttong2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="buttong-tabs">
+              <div class="tabs-panel is-active" id="buttong1">
+                <pre><code>
+&lt;<span class="lowlight">ul</span> class=&quot;button-group&quot;&gt;
+  <span class="lowlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 1&lt;/a&gt;<span class="lowlight">&lt;/li&gt;</span>
+  <span class="lowlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 2&lt;/a&gt;<span class="lowlight">&lt;/li&gt;</span>
+  <span class="lowlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot; class=&quot;button&quot;&gt;Button 3&lt;/a&gt;<span class="lowlight">&lt;/li&gt;</span>
+&lt;/<span class="lowlight">ul</span>&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="buttong2">
+                <pre><code>
+&lt;<span class="highlight">div</span> class=&quot;button-group&quot;&gt;
+  &lt;a class=&quot;button&quot;&gt;One&lt;/a&gt;
+  &lt;a class=&quot;button&quot;&gt;Two&lt;/a&gt;
+  &lt;a class=&quot;button&quot;&gt;Three&lt;/a&gt;
+&lt;/<span class="highlight">div</span>&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="callout">Callout</h1>
+  <p>Previously known as .panel</p>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <div class="panel">
+      <h5>This is a regular panel.</h5>
+      <p>It has an easy to override visual style, and is appropriately subdued.</p>
+    </div>
+    <span class="badge f6">6</span>
+      <div class="callout">
+        <h5>This is a callout.</h5>
+        <p>It has an easy to override visual style, and is appropriately subdued.</p>
+      </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="callout-tabs">
+        <li class="tabs-title is-active"><a href="#callout1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#callout2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="callout-tabs">
+              <div class="tabs-panel is-active" id="callout1">
+                <pre><code>
+&lt;div class=&quot;<span class="lowlight">panel</span>&quot;&gt;
+  &lt;h5&gt;This is a regular panel.&lt;/h5&gt;
+  &lt;p&gt;It has an easy to override visual style, and is appropriately subdued.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="callout2">
+                <pre><code>
+&lt;div class=&quot;<span class="highlight">callout</span>&quot;&gt;
+  &lt;h5&gt;This is a callout.&lt;/h5&gt;
+  &lt;p&gt;It has an easy to override visual style, and is appropriately subdued.&lt;/p&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="clearing"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Clearing</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <ul class="clearing-thumbs small-block-grid-4" data-clearing>
+      <li><a href="http://placehold.it/300x300"><img src="http://placehold.it/300x300"></a></li>
+      <li><a href="http://placehold.it/400x400"><img src="http://placehold.it/400x400"></a></li>
+      <li><a href="http://placehold.it/500x500"><img src="http://placehold.it/500x500"></a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="clear-tabs">
+        <li class="tabs-title is-active"><a href="#clear1" aria-selected="true">Foundation 5</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="clear-tabs">
+              <div class="tabs-panel is-active" id="clear1">
+                <pre><code>
+&lt;ul class=&quot;clearing-thumbs&quot; data-clearing&gt;
+  &lt;li&gt;&lt;a href=&quot;path/to/your/img&quot;&gt;&lt;img src=&quot;path/to/your/img-th&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;path/to/your/img&quot;&gt;&lt;img src=&quot;path/to/your/img-th&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;path/to/your/img&quot;&gt;&lt;img src=&quot;path/to/your/img-th&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="close-button">Close Button</h1>
+  <p>The tiny blue X is Foundation 5 and the bigger X is Foundation 6.</p>
+  <div class="small-12 medium-6 large-6 columns">
+    <a href="#" class="close">&times;</a>
+
+      <button class="close-button" aria-label="Close alert" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="close-tabs">
+        <li class="tabs-title is-active"><a href="#close1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#close2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="close-tabs">
+              <div class="tabs-panel is-active" id="close1">
+                <pre><code>
+<span class="lowlight">&lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="close2">
+                <pre><code>
+<span class="highlight">&lt;button class=&quot;close-button&quot; aria-label=&quot;Close alert&quot; type=&quot;button&quot;&gt;
+  &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="drilldown-menu"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="New Feature!"><i class="fa fa-star"></i></span> Drilldown Menu</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <ul class="vertical menu" data-drilldown>
+      <li>
+        <a href="#">Item 1</a>
+        <ul class="vertical menu">
+          <li><a href="#">Item 1A</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Item 2</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="drill-tabs">
+        <li class="tabs-title is-active"><a href="#drill1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="drill-tabs">
+              <div class="tabs-panel is-active" id="drill1">
+                <pre><code>
+&lt;ul class=&quot;vertical menu&quot; data-drilldown&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;
+    &lt;ul class=&quot;vertical menu&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1A&lt;/a&gt;&lt;/li&gt;
+      &lt;!-- ... --&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="dropdown-button">Dropdown Button</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <a href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">Dropdown Button</a><br/>
+    <span class="badge f6">6</span>
+    <button class="button" type="button" data-toggle="example-dropdown">Toggle Dropdown</button>
+      <div class="dropdown-pane" id="example-dropdown" data-dropdown>
+        Just some junk that needs to be said. Or not. Your choice.
+      </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="dropb-tabs">
+        <li class="tabs-title is-active"><a href="#dropb1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#dropb2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="dropb-tabs">
+              <div class="tabs-panel is-active" id="dropb1">
+                <pre><code>
+&lt;button <span class="lowlight">href=&quot;#&quot; data-dropdown=&quot;drop1&quot; aria-controls=&quot;drop1&quot; aria-expanded=&quot;false&quot;</span> class=&quot;button <span class="lowlight">dropdown</span>&quot;&gt;Dropdown Button&lt;/button&gt;&lt;br&gt;
+<span class="lowlight">&lt;ul id=&quot;drop1&quot; data-dropdown-content class=&quot;f-dropdown&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is another&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yet another&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="dropb2">
+                <pre><code>
+&lt;button class=&quot;button&quot; <span class="highlight">type=&quot;button&quot; data-toggle=&quot;example-dropdown&quot;&gt;</span>Toggle Dropdown&lt;/button&gt;
+<span class="highlight">&lt;div class=&quot;dropdown-pane&quot; id=&quot;example-dropdown&quot; data-dropdown&gt;
+  Just some junk that needs to be said. Or not. Your choice.
+&lt;/div&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="dropdown-menu"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Old Feature, New World!"><i class="fa fa-star-half-o"></i></span> Dropdown Menu</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li>
+        <a href="#">Item 1</a>
+        <ul class="menu">
+          <li><a href="#">Item 1A</a></li>
+          <!-- ... -->
+        </ul>
+      </li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+      <li><a href="#">Item 4</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="drill-tabs">
+        <li class="tabs-title is-active"><a href="#drill1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="drill-tabs">
+              <div class="tabs-panel is-active" id="drill1">
+                <pre><code>
+&lt;ul class=&quot;dropdown menu&quot; data-dropdown-menu&gt;
+  &lt;li&gt;
+  &lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;
+    &lt;ul class=&quot;menu&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1A&lt;/a&gt;&lt;/li&gt;
+      &lt;!-- ... --&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="equalizer">Equalizer</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <div class="row" data-equalizer>
+      <div class="large-6 columns panel" data-equalizer-watch>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+      </div>
+      <div class="large-6 columns panel" data-equalizer-watch>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="equal-tabs">
+        <li class="tabs-title is-active"><a href="#equal1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#equal2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="equal-tabs">
+              <div class="tabs-panel is-active" id="equal1">
+                <pre><code>
+&lt;div class=&quot;row&quot; data-equalizer&gt;
+  &lt;div class=&quot;large-6 columns panel&quot; data-equalizer-watch&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div class=&quot;large-6 columns panel&quot; data-equalizer-watch&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="equal2">
+                <pre><code>
+&lt;div class=&quot;row&quot; data-equalizer <span class="highlight">data-equalize-on=&quot;medium&quot;</span>&gt;
+  &lt;div class=&quot;large-6 columns panel&quot; data-equalizer-watch&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div class=&quot;large-6 columns panel&quot; data-equalizer-watch&gt;
+    ...
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="float-classes">Float Classes</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <div class="panel clearfix">
+      <a class="button right">Float Right</a>
+      <a class="button left">Float Left</a>
+    </div>
+<span class="badge f6">6</span>
+    <div class="callout clearfix">
+      <a class="button float-left">Left</a>
+      <a class="button float-right">Right</a>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="float-tabs">
+        <li class="tabs-title is-active"><a href="#float1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#float2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="float-tabs">
+              <div class="tabs-panel is-active" id="float1">
+                <pre><code>
+  &lt;a class=&quot;button right&quot;&gt;Float Right&lt;/a&gt;
+  &lt;a class=&quot;button left&quot;&gt;Float Left&lt;/a&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="float2">
+                <pre><code>
+  &lt;a class=&quot;button <span class="highlight">float-</span>left&quot;&gt;Left&lt;/a&gt;
+  &lt;a class=&quot;button <span class="highlight">float-</span>right&quot;&gt;Right&lt;/a&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="icon-bar"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Icon Bar</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <div class="icon-bar five-up">
+      <a class="item">
+        <i class="fa fa-home"></i>
+        <label>Home</label>
+      </a>
+      <a class="item">
+        <i class="fa fa-bookmark"></i>
+        <label>Bookmark</label>
+      </a>
+      <a class="item">
+        <i class="fa fa-info"></i>
+        <label>Info</label>
+      </a>
+      <a class="item">
+        <i class="fa fa-envelope"></i>
+        <label>Mail</label>
+      </a>
+      <a class="item">
+        <i class="fa fa-thumbs-up"></i>
+        <label>Like</label>
+      </a>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="iconbar-tabs">
+        <li class="tabs-title is-active"><a href="#iconbar1" aria-selected="true">Foundation 5</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="iconbar-tabs">
+              <div class="tabs-panel is-active" id="iconbar1">
+                <pre><code>
+&lt;div class=&quot;icon-bar five-up&quot;&gt;
+  &lt;a class=&quot;item&quot;&gt;
+    &lt;img src=&quot;../assets/img/images/fi-home.svg&quot; &gt;
+    &lt;label&gt;Home&lt;/label&gt;
+  &lt;/a&gt;
+  &lt;a class=&quot;item&quot;&gt;
+    &lt;img src=&quot;../assets/img/images/fi-bookmark.svg&quot; &gt;
+    &lt;label&gt;Bookmark&lt;/label&gt;
+  &lt;/a&gt;
+  &lt;a class=&quot;item&quot;&gt;
+    &lt;img src=&quot;../assets/img/images/fi-info.svg&quot; &gt;
+    &lt;label&gt;Info&lt;/label&gt;
+  &lt;/a&gt;
+  &lt;a class=&quot;item&quot;&gt;
+    &lt;img src=&quot;../assets/img/images/fi-mail.svg&quot; &gt;
+    &lt;label&gt;Mail&lt;/label&gt;
+  &lt;/a&gt;
+  &lt;a class=&quot;item&quot;&gt;
+    &lt;img src=&quot;../assets/img/images/fi-like.svg&quot; &gt;
+    &lt;label&gt;Like&lt;/label&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="inline-list">Inline List</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="inline-list">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+    </ul>
+    <span class="badge f6">6</span>
+    <ul class="menu">
+      <li><a href="#">One</a></li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+      <li><a href="#">Four</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="inline-tabs">
+        <li class="tabs-title is-active"><a href="#inline1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#inline2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="inline-tabs">
+              <div class="tabs-panel is-active" id="inline1">
+                <pre><code>
+&lt;ul class=&quot;<span class="lowlight">inline-list</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="inline2">
+                <pre><code>
+&lt;ul class=&quot;<span class="highlight">menu</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="interchange">Interchange</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <img data-interchange="[http://placehold.it/800x350, (small)], [http://placehold.it/1000x350, (medium)], [http://placehold.it/1500x350, (large)]" data-uuid="interchange-im5a0u9m0" src="http://placehold.it/1500x350">
+    <span class="badge f6">6</span>
+    <img data-interchange="[http://placehold.it/800x350, small], [http://placehold.it/1000x350, medium], [http://placehold.it/1500x350, large]">
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="inter-tabs">
+        <li class="tabs-title is-active"><a href="#inter1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#inter2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="inter-tabs">
+              <div class="tabs-panel is-active" id="inter1">
+                <pre><code>
+&lt;img data-interchange=&quot;[http://placehold.it/800x350, <span class="lowlight">(</span>small<span class="lowlight">)</span>], [http://placehold.it/1000x350, <span class="lowlight">(</span>medium<span class="lowlight">)</span>], [http://placehold.it/1500x350, <span class="lowlight">(</span>large<span class="lowlight">)</span>]&quot; <span class="lowlight">data-uuid=&quot;interchange-im5a0u9m0&quot; src=&quot;http://placehold.it/1500x350&quot;</span>&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="inter2">
+                <pre><code>
+&lt;img data-interchange=&quot;[http://placehold.it/800x350, small], [http://placehold.it/1000x350, medium], [http://placehold.it/1500x350, large]&quot;&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="joyride"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Joyride</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <a class="button disabled" id="topbutton" href="#">Start Joyride</a>
+    <h1>Coming Soon!</h1>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="joy-tabs">
+        <li class="tabs-title is-active"><a href="#joy1" aria-selected="true">Foundation 5</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="joy-tabs">
+              <div class="tabs-panel is-active" id="joy1">
+                <pre><code>
+&lt;ol class=&quot;joyride-list&quot; data-joyride&gt;
+  &lt;li data-id=&quot;firstStop&quot; data-text=&quot;Next&quot; data-options=&quot;tip_location: top; prev_button: false&quot;&gt;
+    &lt;p&gt;Hello and welcome to the Joyride &lt;br&gt;documentation page.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li data-id=&quot;numero1&quot; data-class=&quot;custom so-awesome&quot; data-text=&quot;Next&quot; data-prev-text=&quot;Prev&quot;&gt;
+    &lt;h4&gt;Stop #1&lt;/h4&gt;
+    &lt;p&gt;You can control all the details for you tour stop. Any valid HTML will work inside of Joyride.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li data-id=&quot;numero2&quot; data-button=&quot;Next&quot; data-prev-text=&quot;Prev&quot; data-options=&quot;tip_location:top;tip_animation:fade&quot;&gt;
+    &lt;h4&gt;Stop #2&lt;/h4&gt;
+    &lt;p&gt;Get the details right by styling Joyride with a custom stylesheet!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li data-button=&quot;End&quot; data-prev-text=&quot;Prev&quot;&gt;
+    &lt;h4&gt;Stop #3&lt;/h4&gt;
+    &lt;p&gt;It works as a modal too!&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="magellan">Magellan</h1>
+  <p>Pretty much just start over.</p>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+       <div data-magellan-expedition="fixed">
+          <dl class="sub-nav">
+            <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
+            <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
+          </dl>
+        </div>
+    <span class="badge f6">6</span>
+        <ul class="horizontal menu" data-magellan>
+          <li><a href="#first">First Arrival</a></li>
+          <li><a href="#second">Second Arrival</a></li>
+          <li><a href="#third">Third Arrival</a></li>
+        </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="magel-tabs">
+        <li class="tabs-title is-active"><a href="#magel1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#magel2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="magel-tabs">
+              <div class="tabs-panel is-active" id="magel1">
+                <pre><code>
+<span class="lowlight">&lt;div data-magellan-expedition=&quot;fixed&quot;&gt;
+  &lt;dl class=&quot;sub-nav&quot;&gt;
+    &lt;dd data-magellan-arrival=&quot;build&quot;&gt;&lt;a href=&quot;#build&quot;&gt;Build with HTML&lt;/a&gt;&lt;/dd&gt;
+    &lt;dd data-magellan-arrival=&quot;js&quot;&gt;&lt;a href=&quot;#js&quot;&gt;Arrival 2&lt;/a&gt;&lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;
+&lt;h3 data-magellan-destination=&quot;arrival&quot;&gt;Arrival&lt;/h3&gt;
+&lt;a name=&quot;arrival&quot;&gt;&lt;/a&gt;
+&lt;h3 data-magellan-destination=&quot;destination&quot;&gt;Destination&lt;/h3&gt;
+&lt;a name=&quot;destination&quot;&gt;&lt;/a&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="magel2">
+                <pre><code>
+<span class="highlight">&lt;ul class=&quot;horizontal menu&quot; data-magellan&gt;
+  &lt;li&gt;&lt;a href=&quot;#first&quot;&gt;First Arrival&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#second&quot;&gt;Second Arrival&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#third&quot;&gt;Third Arrival&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;sections&quot;&gt;
+  &lt;section id=&quot;first&quot; data-magellan-target=&quot;first&quot;&gt;First Section&lt;/section&gt;
+  &lt;section id=&quot;second&quot; data-magellan-target=&quot;second&quot;&gt;Second Section&lt;/section&gt;
+  &lt;section id=&quot;third&quot; data-magellan-target=&quot;third&quot;&gt;Third Section&lt;/section&gt;
+&lt;/div&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="media-object"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="New Feature!"><i class="fa fa-star"></i></span> Media Object</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <div class="media-object">
+      <div class="media-object-section">
+        <div class="thumbnail">
+          <img src="http://placehold.it/250x250" alt=""/>
+        </div>
+      </div>
+      <div class="media-object-section">
+        <h4>Dreams feel real while we're in them.</h4>
+        <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
+      </div>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="media-menu-tabs">
+              <li class="tabs-title is-active"><a href="#mediamenu1" aria-selected="true">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="media-menu-tabs">
+              <div class="tabs-panel is-active" id="mediamenu1">
+                <pre><code>
+&lt;div class=&quot;media-object&quot;&gt;
+  &lt;div class=&quot;media-object-section&quot;&gt;
+    &lt;div class=&quot;thumbnail&quot;&gt;
+      &lt;img src=&quot;http://placehold.it/350x350&quot; alt=&quot;&quot;/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;media-object-section&quot;&gt;
+    &lt;h4&gt;Dreams feel real while we're in them.&lt;/h4&gt;
+    &lt;p&gt;I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="menu">Menu</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="inline-list">
+      <li><a href="#">Link 1</a></li>
+      <li><a href="#">Link 2</a></li>
+      <li><a href="#">Link 3</a></li>
+      <li><a href="#">Link 4</a></li>
+    </ul>
+    <span class="badge f6">6</span>
+    <ul class="menu">
+      <li><a href="#">One</a></li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+      <li><a href="#">Four</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="menu-tabs">
+        <li class="tabs-title is-active"><a href="#menu1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#menu2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="menu-tabs">
+              <div class="tabs-panel is-active" id="menu1">
+                <pre><code>
+&lt;ul class=&quot;<span class="lowlight">inline-list</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="menu2">
+                <pre><code>
+&lt;ul class=&quot;<span class="highlight">menu</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="off-canvas">Off Canvas</h1>
+  <div class="small-12 medium-6 large-6 columns">
+  <div class="off-canvas-wrapper">
+    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+
+        <!-- Close button -->
+        <button class="close-button" aria-label="Close menu" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <!-- Menu -->
+        <ul class="vertical menu">
+          <li><a href="#">Foundation</a></li>
+          <li><a href="#">Dot</a></li>
+          <li><a href="#">ZURB</a></li>
+          <li><a href="#">Com</a></li>
+          <li><a href="#">Slash</a></li>
+          <li><a href="#">Sites</a></li>
+        </ul>
+
+      </div>
+
+      <div class="off-canvas-content" data-off-canvas-content>
+<div class="row column">
+  <button type="button" class="button" data-toggle="offCanvas">Open Menu</button>
+        <img src="http://placehold.it/2000x1000" alt="" />
+
+      </div>
+
+  <!-- close wrapper, no more content after this -->
+  </div>
+</div>
+
+</div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="canvas-menu-tabs">
+              <li class="tabs-title is-active"><a href="#canvasmenu1" aria-selected="true">Foundation 5</a></li>
+              <li class="tabs-title"><a href="#canvasmenu2" aria-selected="true">Foundation 6</a></li>
+            </ul>
+
+
+            <div class="tabs-content" data-tabs-content="canvas-menu-tabs">
+              <div class="tabs-panel is-active" id="canvasmenu1">
+                <pre><code>
+&lt;div class=&quot;off-canvas-wrap&quot; <span class="lowlight">data-offcanvas</span>&gt;
+  &lt;div class=&quot;<span class="lowlight">inner-wrap</span>&quot;&gt;
+
+    <span class="lowlight">&lt;a class=&quot;left-off-canvas-toggle&quot; href=&quot;#&quot; &gt;Menu&lt;/a&gt;</span>
+
+    &lt;!-- Off Canvas Menu --&gt;
+    <span class="lowlight">&lt;aside class=&quot;left-off-canvas-menu&quot;&gt;</span>
+        &lt;!-- whatever you want goes here --&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+        ...
+        &lt;/ul&gt;
+    <span class="lowlight">&lt;/aside&gt;</span>
+
+    &lt;!-- main content goes here --&gt;
+    <span class="lowlight">&lt;p&gt;Set in the year 0 F.E. (&quot;Foundation Era&quot;), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all possibilities in large societies to mathematics, allowing for the prediction of future events.&lt;/p&gt;</span>
+
+  &lt;!-- close the off-canvas menu --&gt;
+  <span class="lowlight">&lt;a class=&quot;exit-off-canvas&quot;&gt;&lt;/a&gt;</span>
+
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="canvasmenu2">
+                <pre><code>
+&lt;div class=&quot;off-canvas-wrap<span class="highlight">per</span>&quot;&gt;
+    <span class="highlight">&lt;div class=&quot;off-canvas-wrapper-inner&quot; data-off-canvas-wrapper&gt;</span>
+      <span class="highlight">&lt;div class=&quot;off-canvas position-left&quot; id=&quot;offCanvas&quot; data-off-canvas&gt;</span>
+
+        &lt;!-- Close button --&gt;
+        <span class="highlight">&lt;button class=&quot;close-button&quot; aria-label=&quot;Close menu&quot; type=&quot;button&quot; data-close&gt;
+          &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;</span>
+
+        &lt;!-- Menu --&gt;
+        &lt;ul class=&quot;<span class="highlight">vertical menu</span>&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Foundation&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+      &lt;/div&gt;
+
+      <span class="highlight">&lt;div class=&quot;off-canvas-content&quot; data-off-canvas-content&gt;</span>
+        &lt;!-- Page content --&gt;
+      <span class="highlight">&lt;/div&gt;</span>
+    &lt;/div&gt;
+  &lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="orbit">Orbit</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f6">6</span>
+     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <ul class="orbit-container">
+          <button class="orbit-previous-test"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+          <button class="orbit-next-test"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+          <li class="is-active orbit-slide">
+            <img class="orbit-image" src="http://placehold.it/1350x550?text=Slide+1" alt="">
+            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="http://placehold.it/1350x550?text=Slide+2" alt="">
+            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="http://placehold.it/1350x550?text=Slide+3" alt="">
+            <figcaption class="orbit-caption">Encapsulating</figcaption>
+          </li>
+          <li class="orbit-slide">
+            <img class="orbit-image" src="http://placehold.it/1350x550?text=Slide+4" alt="">
+            <figcaption class="orbit-caption">Outta This World</figcaption>
+          </li>
+        </ul>
+        <nav class="orbit-bullets">
+          <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+          <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+          <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+          <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+        </nav>
+      </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="orbit-tabs">
+        <li class="tabs-title is-active"><a href="#orbit1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#orbit2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="orbit-tabs">
+              <div class="tabs-panel is-active" id="orbit1">
+                <pre><code>
+&lt;div class=&quot;orbit-container&quot;&gt;
+  &lt;ul data-orbit class=&quot;example-orbit <span class="lowlight">orbit-slides-container</span>&quot;&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;../assets/img/examples/satelite-orbit.jpg&quot; alt=&quot;slide 1&quot; /&gt;
+      &lt;<span class="lowlight">div</span> class=&quot;orbit-caption&quot;&gt;
+        Caption One.
+      <span class="lowlight">&lt;/div&gt;</span>
+    &lt;/li&gt;
+    &lt;li class=&quot;active&quot;&gt;
+      &lt;img src=&quot;../assets/img/examples/andromeda-orbit.jpg&quot; alt=&quot;slide 1&quot; /&gt;
+      &lt;<span class="lowlight">div</span> class=&quot;orbit-caption&quot;&gt;
+        Caption Two.
+      <span class="lowlight">&lt;/div&gt;</span>
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;img src=&quot;../assets/img/examples/launch-orbit.jpg&quot; alt=&quot;slide 1&quot; /&gt;
+      &lt;<span class="lowlight">div</span> class=&quot;orbit-caption&quot;&gt;
+        Caption Three.
+      <span class="lowlight">&lt;/div&gt;</span>
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;<span class="lowlight">a href=&quot;#&quot;</span> class=&quot;orbit-prev&quot;&gt;Prev <span class="lowlight">&lt;span&gt;&lt;/span&gt;&lt;/a&gt;</span>
+  &lt;<span class="lowlight">a href=&quot;#&quot;</span> class=&quot;orbit-next&quot;&gt;Next <span class="lowlight">&lt;span&gt;&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="lowlight">&lt;div class=&quot;orbit-slide-number&quot;&gt;
+    &lt;span&gt;1&lt;/span&gt; of &lt;span&gt;3&lt;/span&gt;
+  &lt;/div&gt;</span>
+  <span class="lowlight">&lt;div class=&quot;orbit-timer&quot;&gt;
+    &lt;span&gt;&lt;/span&gt;
+    &lt;div class=&quot;orbit-progress&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;</span>
+&lt;/div&gt;
+&lt;<span class="lowlight">ol</span> class=&quot;orbit-bullets&quot;&gt;
+  &lt;<span class="lowlight">li</span> data<span class="lowlight">-orbit</span>-slide<span class="lowlight">-number</span>=&quot;1&quot;&gt;<span class="lowlight">&lt;/li&gt;</span>
+  &lt;<span class="lowlight">li</span> data<span class="lowlight">-orbit</span>-slide<span class="lowlight">-number</span>=&quot;2&quot; class=&quot;active&quot;&gt;<span class="lowlight">&lt;/li&gt;</span>
+  &lt;<span class="lowlight">li</span> data<span class="lowlight">-orbit</span>-slide<span class="lowlight">-number</span>=&quot;3&quot;&gt;<span class="lowlight">&lt;/li&gt;</span>
+<span class="lowlight">&lt;/ol&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="orbit2">
+                <pre><code>
+<span class="highlight">&lt;div class=&quot;orbit&quot; role=&quot;region&quot; aria-label=&quot;Favorite Space Pictures&quot; data-orbit&gt;</span>
+  &lt;ul class=&quot;orbit-container&quot;&gt;
+    &lt;<span class="highlight">button</span> class=&quot;orbit-previous&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;</span>Previous Slide<span class="highlight">&lt;/span&gt;&amp;#9664;&amp;#xFE0E;&lt;/button&gt;</span>
+    &lt;<span class="highlight">button</span> class=&quot;orbit-next&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;</span>Next Slide<span class="highlight">&lt;/span&gt;&amp;#9654;&amp;#xFE0E;&lt;/button&gt;</span>
+    &lt;li class=&quot;<span class="highlight">is-</span>active orbit-slide&quot;&gt;
+      &lt;img <span class="highlight">class=&quot;orbit-image&quot;</span> src=&quot;assets/img/orbit/01.jpg&quot; alt=&quot;Space&quot;&gt;
+      &lt;<span class="highlight">figcaption</span> class=&quot;orbit-caption&quot;&gt;Space, the final frontier.<span class="highlight">&lt;/figcaption&gt;</span>
+    &lt;/li&gt;
+    &lt;li class=&quot;orbit-slide&quot;&gt;
+      &lt;img <span class="highlight">class=&quot;orbit-image&quot;</span> src=&quot;assets/img/orbit/02.jpg&quot; alt=&quot;Space&quot;&gt;
+      &lt;<span class="highlight">figcaption</span> class=&quot;orbit-caption&quot;&gt;Lets Rocket!<span class="highlight">&lt;/figcaption&gt;</span>
+    &lt;/li&gt;
+    &lt;li class=&quot;orbit-slide&quot;&gt;
+      &lt;img <span class="highlight">class=&quot;orbit-image&quot;</span> src=&quot;assets/img/orbit/03.jpg&quot; alt=&quot;Space&quot;&gt;
+      &lt;<span class="highlight">figcaption</span> class=&quot;orbit-caption&quot;&gt;Encapsulating<span class="highlight">&lt;/figcaption&gt;</span>
+    &lt;/li&gt;
+    &lt;li class=&quot;orbit-slide&quot;&gt;
+      &lt;img <span class="highlight">class=&quot;orbit-image&quot;</span> src=&quot;assets/img/orbit/04.jpg&quot; alt=&quot;Space&quot;&gt;
+      &lt;<span class="highlight">figcaption</span> class=&quot;orbit-caption&quot;&gt;Outta This World<span class="highlight">&lt;/figcaption&gt;</span>
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;<span class="highlight">nav</span> class=&quot;orbit-bullets&quot;&gt;
+    &lt;<span class="highlight">button</span> class=&quot;<span class="highlight">is-</span>active&quot; data-slide=&quot;0&quot;&gt;&lt;span class=&quot;show-for-sr&quot;&gt;First slide details.&lt;/span&gt;&lt;span class=&quot;show-for-sr&quot;&gt;Current Slide&lt;/span&gt;<span class="highlight">&lt;/button&gt;</span>
+    &lt;<span class="highlight">button</span> data-slide=&quot;1&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;Second slide details.&lt;/span&gt;</span><span class="highlight">&lt;/button&gt;</span>
+    &lt;<span class="highlight">button</span> data-slide=&quot;2&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;Third slide details.&lt;/span&gt;</span><span class="highlight">&lt;/button&gt;</span>
+    &lt;<span class="highlight">button</span> data-slide=&quot;3&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;Fourth slide details.&lt;/span&gt;</span><span class="highlight">&lt;/button&gt;</span>
+  <span class="highlight">&lt;/nav&gt;</span>
+<span class="highlight">&lt;/div&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="pagination">Pagination</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="pagination">
+      <li class="arrow unavailable"><a href="">&laquo;</a></li>
+      <li style="padding: 0.1875rem 0.625rem;background: #2199e8;color: #fefefe;cursor: default;"><a href="">1</a></li>
+      <li><a href="">2</a></li>
+      <li><a href="">3</a></li>
+      <li><a href="">4</a></li>
+      <li class="unavailable"><a href="">&hellip;</a></li>
+      <li><a href="">12</a></li>
+      <li><a href="">13</a></li>
+      <li class="arrow"><a href="">&raquo;</a></li>
+    </ul>
+    <span class="badge f6">6</span>
+    <ul class="pagination" role="navigation" aria-label="Pagination">
+      <li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
+      <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+      <li><a href="#" aria-label="Page 2">2</a></li>
+      <li><a href="#" aria-label="Page 3">3</a></li>
+      <li><a href="#" aria-label="Page 4">4</a></li>
+      <li class="ellipsis" aria-hidden="true"></li>
+      <li><a href="#" aria-label="Page 12">12</a></li>
+      <li><a href="#" aria-label="Page 13">13</a></li>
+      <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="page-tabs">
+        <li class="tabs-title is-active"><a href="#page1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#page2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="page-tabs">
+              <div class="tabs-panel is-active" id="page1">
+                <pre><code>
+&lt;ul class=&quot;pagination&quot;&gt;
+  &lt;li class=&quot;<span class="lowlight">arrow unavailable</span>&quot;&gt;<span class="lowlight">&lt;a href=&quot;&quot;&gt;&amp;laquo;&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;li class=&quot;current&quot;&gt;<span class="lowlight">&lt;a href=&quot;&quot;&gt;1&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="lowlight">unavailable</span>&quot;&gt;<span class="lowlight">&lt;a href=&quot;&quot;&gt;&amp;hellip;&lt;/a&gt;</span>&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;12&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;&quot;&gt;13&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="lowlight">arrow</span>&quot;&gt;&lt;a href=&quot;&quot;&gt;<span class="lowlight">&amp;raquo;</span>&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="page2">
+                <pre><code>
+&lt;ul class=&quot;pagination&quot; <span class="highlight">role=&quot;navigation&quot; aria-label=&quot;Pagination&quot;</span>&gt;
+  &lt;li class=&quot;<span class="highlight">pagination-previous disabled</span>&quot;&gt;<span class="highlight">Previous &lt;span class=&quot;show-for-sr&quot;&gt;page&lt;/span&gt;</span>&lt;/li&gt;
+  &lt;li class=&quot;current&quot;&gt;<span class="highlight">&lt;span class=&quot;show-for-sr&quot;&gt;You're on page&lt;/span&gt;</span> 1&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Page 2&quot;</span>&gt;2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Page 3&quot;</span>&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Page 4&quot;</span>&gt;4&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="highlight">ellipsis&quot; aria-hidden=&quot;true&quot;</span>&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Page 12&quot;</span>&gt;12&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Page 13&quot;</span>&gt;13&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;<span class="highlight">pagination-next&quot;&gt;&lt;a href=&quot;#&quot; <span class="highlight">aria-label=&quot;Next page&quot;&gt;Next &lt;span class=&quot;show-for-sr&quot;&gt;page&lt;/span&gt;</span>&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="pricing-table"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Pricing Table</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="pricing-table">
+      <li class="title">Standard</li>
+      <li class="price">$99.99</li>
+      <li class="description">An awesome description</li>
+      <li class="bullet-item">1 Database</li>
+      <li class="bullet-item">5GB Storage</li>
+      <li class="bullet-item">20 Users</li>
+      <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
+    </ul>
+    - <a href="http://andycochran.github.io/" target="_blank">Andy Cochran</a> submitted to Foundation Building Blocks
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="price-tabs">
+        <li class="tabs-title is-active"><a href="#price1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#price2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="price-tabs">
+              <div class="tabs-panel is-active" id="price1">
+                <pre><code>
+&lt;ul class=&quot;pricing-table&quot;&gt;
+  &lt;li class=&quot;title&quot;&gt;Standard&lt;/li&gt;
+  &lt;li class=&quot;price&quot;&gt;$99.99&lt;/li&gt;
+  &lt;li class=&quot;description&quot;&gt;An awesome description&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;bullet-item&quot;</span>&gt;1 Database&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;bullet-item&quot;</span>&gt;5GB Storage&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;bullet-item&quot;</span>&gt;20 Users&lt;/li&gt;
+  &lt;li <span class="lowlight">class=&quot;cta-button&quot;</span>&gt;&lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;Buy Now&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+               <div class="tabs-panel" id="price2">
+                <pre><code>
+&lt;ul class=&quot;pricing-table <span class="highlight">no-bullet text-center</span>&quot;&gt;
+  &lt;li class=&quot;title&quot;&gt;Standard&lt;/li&gt;
+  &lt;li class=&quot;price&quot;&gt;$99.99&lt;/li&gt;
+  &lt;li class=&quot;description&quot;&gt;An awesome description&lt;/li&gt;
+  &lt;li&gt;1 Database&lt;/li&gt;
+  &lt;li&gt;5GB Storage&lt;/li&gt;
+  &lt;li&gt;20 Users&lt;/li&gt;
+  &lt;li&gt;&lt;a class=&quot;button&quot; href=&quot;#&quot;&gt;Buy Now&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="progress-bar">Progress Bar</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <div class="progress" style="background-color: #F6F6F6;border: 1px solid white;height: 1.5625rem;margin-bottom: 0.625rem;padding: 0.125rem;">
+      <span class="meter" style="width: 50%"></span>
+    </div>
+    <span class="badge f6">6</span>
+    <div class="progress" role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
+      <div class="progress-meter" style="width: 50%"></div>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="progress-tabs">
+        <li class="tabs-title is-active"><a href="#progress1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#progress2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="progress-tabs">
+              <div class="tabs-panel is-active" id="progress1">
+                <pre><code>
+&lt;div class=&quot;progress&quot;&gt;
+  &lt;<span class="lowlight">span</span> class=&quot;meter&quot; style=&quot;width:50%;&quot;&gt;&lt;<span class="lowlight">/span</span>&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+               <div class="tabs-panel" id="progress2">
+                <pre><code>
+&lt;div class=&quot;progress&quot; <span class="highlight">role=&quot;progressbar&quot; tabindex=&quot;0&quot; aria-valuenow=&quot;50&quot; aria-valuemin=&quot;0&quot; aria-valuetext=&quot;50 percent&quot; aria-valuemax=&quot;100&quot;</span>&gt;
+  &lt;<span class="highlight">div</span> class=&quot;<span class="highlight">progress-</span>meter&quot; style=&quot;width: 50%&quot;&gt;&lt;<span class="highlight">/div</span>&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="radius-round"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Radius/Round</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <div class="alert-box radius" data-alert>Alert with Radius<a href="#" class="close">&times;</a></div>
+    <div class="alert-box round" data-alert>Alert with Round<a href="#" class="close">&times;</a></div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="radius-tabs">
+        <li class="tabs-title is-active"><a href="#radius1" aria-selected="true">Foundation 5</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="radius-tabs">
+              <div class="tabs-panel is-active" id="radius1">
+                <pre><code>
+&lt;div class=&quot;alert-box radius&quot; data-alert&gt;Alert with Radius&lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;alert-box round&quot; data-alert&gt;Alert with Round&lt;a href=&quot;#&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="range-slider">Range Slider</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <div class="range-slider" data-slider>
+      <span class="range-slider-handle" role="slider"></span>
+      <span class="range-slider-active-segment"></span>
+      <input type="hidden">
+    </div>
+    <span class="badge f6">6</span>
+    <div class="slider" data-slider data-initial-start="50" data-end="200">
+      <span class="slider-handle"  data-slider-handle role="slider"></span>
+      <span class="slider-fill" data-slider-fill></span>
+      <input type="hidden">
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="range-tabs">
+        <li class="tabs-title is-active"><a href="#range1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#range2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="range-tabs">
+              <div class="tabs-panel is-active" id="range1">
+                <pre><code>
+&lt;div class=&quot;<span class="lowlight">range-</span>slider&quot; data-slider&gt;
+  &lt;span class=&quot;<span class="lowlight">range-</span>slider-handle&quot; role=&quot;slider&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;<span class="lowlight">range-</span>slider-<span class="lowlight">active-segment</span>&quot;&gt;&lt;/span&gt;
+  &lt;input type=&quot;hidden&quot;&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="range2">
+                <pre><code>
+&lt;div class=&quot;slider&quot; data-slider <span class="highlight">data-initial-start=&quot;50&quot; data-end=&quot;200&quot;</span>&gt;
+  &lt;span class=&quot;<span class="highlight">slider-handle</span>&quot;  <span class="highlight">data-</span>slider-handle role=&quot;slider&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;slider-<span class="highlight">fill</span>&quot; <span class="highlight">data-slider-fill</span>&gt;&lt;/span&gt;
+  &lt;input type=&quot;hidden&quot;&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="responsive-menu"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Old Feature, New World!"><i class="fa fa-star-half-o"></i></span> Responsive Menu</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <ul class="vertical medium-horizontal menu">
+      <li><a href="#">Item 1</a></li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="remenu-tabs">
+        <li class="tabs-title is-active"><a href="#remenu1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="remenu-tabs">
+              <div class="tabs-panel is-active" id="remenu1">
+                <pre><code>
+&lt;ul class=&quot;vertical medium-horizontal menu&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="responsive-toggle"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Old Feature, New World!"><i class="fa fa-star-half-o"></i></span> Responsive Toggle</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <div class="title-bar" data-responsive-toggle="example-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+      </div>
+
+      <div class="top-bar" id="example-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">Site Title</li>
+            <li class="has-submenu">
+              <a href="#">One</a>
+              <ul class="submenu menu vertical" data-submenu>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+          </ul>
+        </div>
+       
+      </div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="toggle-tabs">
+        <li class="tabs-title is-active"><a href="#toggle1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="toggle-tabs">
+              <div class="tabs-panel is-active" id="toggle1">
+                <pre><code>
+&lt;div class=&quot;title-bar&quot; data-responsive-toggle=&quot;example-menu&quot; data-hide-for=&quot;medium&quot;&gt;
+  &lt;button class=&quot;menu-icon&quot; type=&quot;button&quot; data-toggle&gt;&lt;/button&gt;
+  &lt;div class=&quot;title-bar-title&quot;&gt;Menu&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;top-bar&quot; id=&quot;example-menu&quot;&gt;
+  &lt;div class=&quot;top-bar-left&quot;&gt;
+    &lt;ul class=&quot;dropdown menu&quot; data-dropdown-menu&gt;
+      &lt;li class=&quot;menu-text&quot;&gt;Site Title&lt;/li&gt;
+      &lt;li class=&quot;has-submenu&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;
+        &lt;ul class=&quot;submenu menu vertical&quot; data-submenu&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="reveal">Reveal</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <span class="badge f6">6</span>
+    <a data-open="exampleModal1">Click me for a modal</a>
+    <div class="reveal" id="exampleModal1" data-reveal>
+      <h1>Awesome. I Have It.</h1>
+      <p class="lead">Your couch. It is mine.</p>
+      <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+      <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="reveal-tabs">
+        <li class="tabs-title is-active"><a href="#reveal1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#reveal2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="reveal-tabs">
+              <div class="tabs-panel is-active" id="reveal1">
+                <pre><code>
+&lt;a <span class="lowlight">href=&quot;#&quot;</span> data-<span class="lowlight">reveal-id</span>=&quot;myModal&quot;&gt;Click Me For A Modal&lt;/a&gt;
+
+&lt;div id=&quot;myModal&quot; class=&quot;reveal<span class="lowlight">-modal</span>&quot; data-reveal <span class="lowlight">aria-labelledby=&quot;modalTitle&quot; aria-hidden=&quot;true&quot; role=&quot;dialog&quot;</span>&gt;
+  &lt;h2 id=&quot;modalTitle&quot;&gt;Awesome. I have it.&lt;/h2&gt;
+  &lt;p class=&quot;lead&quot;&gt;Your couch.  It is mine.&lt;/p&gt;
+  &lt;p&gt;I'm a cool paragraph that lives inside of an even cooler modal. Wins!&lt;/p&gt;
+  <span class="lowlight">&lt;a class=&quot;close-reveal-modal&quot; aria-label=&quot;Close&quot;&gt;&amp;#215;&lt;/a&gt;</span>
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="reveal2">
+                <pre><code>
+&lt;p&gt;&lt;a data<span class="highlight">-open</span>=&quot;exampleModal1&quot;&gt;Click me for a modal&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;reveal&quot; id=&quot;exampleModal1&quot; data-reveal&gt;
+  &lt;h1&gt;Awesome. I Have It.&lt;/h1&gt;
+  &lt;p class=&quot;lead&quot;&gt;Your couch. It is mine.&lt;/p&gt;
+  &lt;p&gt;I'm a cool paragraph that lives inside of an even cooler modal. Wins!&lt;/p&gt;
+ <span class="highlight"> &lt;button class=&quot;close-button&quot; data-close aria-label=&quot;Close reveal&quot; type=&quot;button&quot;&gt;
+    &lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+  &lt;/button&gt;</span>
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="side-nav">Side Nav</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <ul class="side-nav">
+      <li><a href="#">One</a></li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+      <li><a href="#">Four</a></li>
+    </ul>
+    <span class="badge f6">6</span>
+    <ul class="menu vertical">
+      <li><a href="#">One</a></li>
+      <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+      <li><a href="#">Four</a></li>
+    </ul>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="side-tabs">
+        <li class="tabs-title is-active"><a href="#side1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#side2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="side-tabs">
+              <div class="tabs-panel is-active" id="side1">
+                <pre><code>
+&lt;ul class=&quot;<span class="lowlight">side-nav</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="side2">
+                <pre><code>
+&lt;ul class=&quot;<span class="highlight">menu vertical</span>&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="split-button">Split Button</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <a href="#" class="button split">Split Button <span data-dropdown="drop"></span></a><br>
+
+    <span class="badge f6">6</span>
+   <button class="dropdown button" type="button" data-toggle="example-dropdown-1">Hoverable Dropdown</button>
+<div class="dropdown-pane" id="example-dropdown-1" data-dropdown data-hover="true" data-hover-pane="true">
+  <ul class="menu vertical">
+    <li><a href="#">This is a link</a></li>
+  <li><a href="#">This is another</a></li>
+  <li><a href="#">Yet another</a></li>
+  </ul>
+</div>
+
+
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="split-tabs">
+        <li class="tabs-title is-active"><a href="#split1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#split2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="split-tabs">
+              <div class="tabs-panel is-active" id="split1">
+                <pre><code>
+&lt;button <span class="lowlight">href=&quot;#&quot; data-dropdown=&quot;drop1&quot; aria-controls=&quot;drop1&quot; aria-expanded=&quot;false&quot;</span> class=&quot;button <span class="lowlight">dropdown</span>&quot;&gt;Dropdown Button&lt;/button&gt;&lt;br&gt;
+<span class="lowlight">&lt;ul id=&quot;drop1&quot; data-dropdown-content class=&quot;f-dropdown&quot; aria-hidden=&quot;true&quot;&gt;</span>
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is another&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yet another&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="split2">
+                <pre><code>
+&lt;button class=&quot;button&quot; <span class="highlight">type=&quot;button&quot; data-toggle=&quot;example-dropdown-1&quot;</span>&gt;Hoverable Dropdown&lt;/button&gt;
+<span class="highlight">&lt;div class=&quot;dropdown-pane&quot; id=&quot;example-dropdown-1&quot; data-dropdown data-hover=&quot;true&quot; data-hover-pane=&quot;true&quot;&gt;</span>
+  &lt;ul class=&quot;menu vertical&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;This is another&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Yet another&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+<span class="highlight">&lt;/div&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="sticky">Sticky</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f6">6</span>
+    <div class="columns" data-sticky-container>
+  <div class="sticky" data-sticky data-anchor="foo">
+    <img class="thumbnail" src="http://placehold.it/250x250">
+  </div>
+</div>
+  </div>
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="sticky-tabs">
+        <li class="tabs-title is-active"><a href="#sticky1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#sticky2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="sticky-tabs">
+              <div class="tabs-panel is-active" id="sticky1">
+                <pre><code>
+&lt;div <span class="lowlight">class=&quot;contain-to-grid sticky&quot;</span>&gt;
+  <span class="lowlight">&lt;nav class=&quot;top-bar&quot; data-topbar role=&quot;navigation&quot; data-options=&quot;sticky_on: large&quot;&gt;</span>
+    ...
+  <span class="lowlight">&lt;/nav&gt;</span>
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="sticky2">
+                <pre><code>
+&lt;div <span class="highlight">data-sticky-container</span>&gt;
+  <span class="highlight">&lt;div class=&quot;sticky&quot; data-sticky data-anchor=&quot;foo&quot;&gt;</span>
+    ...
+  <span class="highlight">&lt;/div&gt;</span>
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+<div class="row"><hr/>
+  <div class="small-12 columns">
+<div id="foo">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+ <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+</div></div></div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="sub-nav"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> Sub Nav</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <dl class="sub-nav">
+      <dt>Filter:</dt>
+      <dd class="active"><a href="#">All</a></dd>
+      <dd><a href="#">Active</a></dd>
+      <dd><a href="#">Pending</a></dd>
+      <dd class="hide-for-small-only"><a href="#">Suspended</a></dd>
+    </dl>
+
+    <span class="badge f6">6</span>
+    <ul class="sub-nav-test menu" role="navigation" title="Filter Menu List">
+      <li class="sub-nav-title">Filter:</li>
+      <li class="active"><span class="show-for-sr">You're viewing </span><a href="">All</a></li>
+      <li><a href="#">Active</a></li>
+      <li><a href="#">Pending</a></li>
+    </ul>
+</div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="subnav-tabs">
+        <li class="tabs-title is-active"><a href="#subnav1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#subnav2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="subnav-tabs">
+              <div class="tabs-panel is-active" id="subnav1">
+                <pre><code>
+ &lt;<span class="lowlight">dl</span> class=&quot;sub-nav&quot;&gt;
+  <span class="lowlight">&lt;dt&gt;</span>Filter:<span class="lowlight">&lt;/dt&gt;</span>
+  &lt;<span class="lowlight">dd</span> class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;All&lt;/a&gt;<span class="lowlight">&lt;/dd&gt;</span>
+  <span class="lowlight">&lt;dd&gt;</span>&lt;a href=&quot;#&quot;&gt;Active&lt;/a&gt;<span class="lowlight">&lt;/dd&gt;</span>
+  <span class="lowlight">&lt;dd&gt;</span>&lt;a href=&quot;#&quot;&gt;Pending&lt;/a&gt;<span class="lowlight">&lt;/dd&gt;</span>
+  <span class="lowlight">&lt;dd class=&quot;hide-for-small-only&quot;&gt;</span>&lt;a href=&quot;#&quot;&gt;Suspended&lt;/a&gt;<span class="lowlight">&lt;/dd&gt;</span>
+<span class="lowlight">&lt;/dl&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="subnav2">
+                <pre><code>
+&lt;<span class="highlight">ul</span> class=&quot;sub-nav <span class="highlight">menu</span>&quot; <span class="highlight">role=&quot;navigation&quot; title=&quot;Filter Menu List&quot;</span>&gt;
+  <span class="highlight">&lt;li class=&quot;sub-nav-title&quot;&gt;</span>Filter:<span class="highlight">&lt;/li&gt;</span>
+  &lt;<span class="highlight">li</span> class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;All&lt;/a&gt;<span class="highlight">&lt;/li&gt;</span>
+  <span class="highlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot;&gt;Active&lt;/a&gt;<span class="highlight">&lt;/li&gt;</span>
+  <span class="highlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot;&gt;Pending&lt;/a&gt;<span class="highlight">&lt;/li&gt;</span>
+  <span class="highlight">&lt;li&gt;</span>&lt;a href=&quot;#&quot;&gt;Suspended&lt;/a&gt;<span class="highlight">&lt;/li&gt;</span>
+<span class="highlight">&lt;/ul&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="switches">Switches</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+   <div class="switch">
+      <input id="exampleCheckboxSwitch" type="checkbox">
+      <label for="exampleCheckboxSwitch"></label>
+    </div> 
+
+    <span class="badge f6">6</span>
+    <div class="switch">
+      <input class="switch-input" id="exampleSwitch" type="checkbox" name="exampleSwitch">
+      <label class="switch-paddle" for="exampleSwitch">
+      </label>
+    </div>
+</div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="switch-tabs">
+        <li class="tabs-title is-active"><a href="#switch1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#switch2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="switch-tabs">
+              <div class="tabs-panel is-active" id="switch1">
+                <pre><code>
+&lt;div class=&quot;switch&quot;&gt;
+  &lt;input id=&quot;exampleCheckboxSwitch&quot; type=&quot;checkbox&quot;&gt;
+  &lt;label for=&quot;exampleCheckboxSwitch&quot;&gt;&lt;/label&gt;
+&lt;/div&gt; 
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="switch2">
+                <pre><code>
+&lt;div class=&quot;switch&quot;&gt;
+    &lt;input <span class="highlight">class=&quot;switch-input&quot;</span> id=&quot;exampleSwitch&quot; type=&quot;checkbox&quot; <span class="highlight">name=&quot;exampleSwitch&quot;</span>&gt;
+    &lt;label c<span class="highlight">lass=&quot;switch-paddle&quot;</span> for=&quot;exampleSwitch&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="tabs">Tabs</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+   <ul class="tabs" data-tab>
+    <li class="tab-title active"><a href="#panel1">Tab 1</a></li>
+    <li class="tab-title"><a href="#panel2">Tab 2</a></li>
+  </ul>
+  <div class="tabs-content">
+    <div class="content active" id="panel1">
+      <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
+    </div>
+    <div class="content" id="panel2">
+      <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+    </div>
+  </div>
+
+    <span class="badge f6">6</span>
+    <ul class="tabs" data-tabs id="example-tabs">
+      <li class="tabs-title is-active"><a href="#example1" aria-selected="true">Tab 1</a></li>
+      <li class="tabs-title"><a href="#example2">Tab 2</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="example-tabs">
+      <div class="tabs-panel is-active" id="example1">
+        <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.</p>
+      </div>
+      <div class="tabs-panel" id="example2">
+        <p>Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+      </div>
+    </div>
+</div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="tabs-tabs">
+        <li class="tabs-title is-active"><a href="#tabs1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#tabs2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="tabs-tabs">
+              <div class="tabs-panel is-active" id="tabs1">
+                <pre><code>
+&lt;ul class=&quot;tabs&quot; data-tab&gt;
+  &lt;li class=&quot;tab-title active&quot;&gt;&lt;a href=&quot;#panel1&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;tab-title&quot;&gt;&lt;a href=&quot;#panel2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;tabs-content&quot;&gt;
+  &lt;div class=&quot;<span class="lowlight">content</span> active&quot; id=&quot;panel1&quot;&gt;
+    &lt;p&gt;This is the first panel of the basic tab example. You can place all sorts of content here including a grid.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;<span class="lowlight">content</span>&quot; id=&quot;panel2&quot;&gt;
+    &lt;p&gt;This is the second panel of the basic tab example. This is the second panel of the basic tab example.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="tabs2">
+                <pre><code>
+&lt;ul class=&quot;tabs&quot; data-tab<span class="highlight">s</span> <span class="highlight">id=&quot;example-tabs&quot;</span>&gt;
+  &lt;li class=&quot;tab<span class="highlight">s</span>-title <span class="highlight">is-</span>active&quot;&gt;&lt;a href=&quot;#panel1&quot; <span class="highlight">aria-selected=&quot;true&quot;</span>&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li class=&quot;tab<span class="highlight">s</span>-title&quot;&gt;&lt;a href=&quot;#panel2&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;tabs-content&quot; <span class="highlight">data-tabs-content=&quot;example-tabs&quot;</span>&gt;
+  &lt;div class=&quot;<span class="highlight">tabs-panel</span> <span class="highlight">is-</span>active&quot; id=&quot;panel1&quot;&gt;
+    &lt;p&gt;Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;<span class="highlight">tabs-panel</span>&quot; id=&quot;panel2&quot;&gt;
+    &lt;p&gt;Suspendisse dictum feugiat nisl ut dapibus.  Vivamus hendrerit arcu sed erat molestie vehicula. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor.  Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="thumbnail">Thumbnails</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+      <a class="th" href="http://placehold.it/250x250">
+        <img src="http://placehold.it/100x100" alt="">
+      </a>
+
+    <span class="badge f6">6</span>
+      <img class="thumbnail" src="http://placehold.it/100x100" alt="">
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="thumb-tabs">
+        <li class="tabs-title is-active"><a href="#thumb1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#thumb2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="thumb-tabs">
+              <div class="tabs-panel is-active" id="thumb1">
+                <pre><code>
+<span class="lowlight">&lt;a class=&quot;th&quot; href=&quot;http://placehold.it/100x100&quot;&gt;</span>
+  &lt;img src=&quot;http://placehold.it/100x100&quot; alt=&quot;&quot;&gt;
+<span class="lowlight">&lt;/a&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="thumb2">
+                <pre><code>
+&lt;img <span class="highlight">class=&quot;thumbnail&quot;</span> src=&quot;http://placehold.it/100x100&quot; alt=&quot;&quot;&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="title-bar"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Old Feature, New World!"><i class="fa fa-star-half-o"></i></span> Title Bar</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f6">6</span>
+      <div class="title-bar">
+        <div class="title-bar-left">
+          <button class="menu-icon" type="button"></button>
+          <span class="title-bar-title">Foundation</span>
+        </div>
+        <div class="title-bar-right">
+          <button class="menu-icon" type="button"></button>
+        </div>
+      </div>
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="title-tabs">
+        <li class="tabs-title is-active"><a href="#title1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="title-tabs">
+              <div class="tabs-panel is-active" id="title1">
+                <pre><code>
+&lt;div class=&quot;title-bar&quot;&gt;
+  &lt;div class=&quot;title-bar-left&quot;&gt;
+    &lt;button class=&quot;menu-icon&quot; type=&quot;button&quot;&gt;&lt;/button&gt;
+    &lt;span class=&quot;title-bar-title&quot;&gt;Foundation&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;title-bar-right&quot;&gt;
+    &lt;button class=&quot;menu-icon&quot; type=&quot;button&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="toggler"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="New Feature!"><i class="fa fa-star"></i></span> Toggler</h1>
+  <div class="small-12 medium-6 large-6 columns">
+      <p><a data-toggle="menuBar">Expand!</a></p>
+
+      <ul class="menu" id="menuBar" data-toggler=".expanded">
+        <li><a href="#">One</a></li>
+        <li><a href="#">Two</a></li>
+        <li><a href="#">Three</a></li>
+        <li><a href="#">Four</a></li>
+      </ul>
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="toggler-tabs">
+        <li class="tabs-title is-active"><a href="#toggler1" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="toggler-tabs">
+              <div class="tabs-panel is-active" id="toggler1">
+                <pre><code>
+&lt;p&gt;&lt;a data-toggle=&quot;menuBar&quot;&gt;Expand!&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul class=&quot;menu&quot; id=&quot;menuBar&quot; data-toggler=&quot;.expanded&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+
+<div class="row"><hr/>
+  <h1 id="tooltip">Tooltip</h1>
+  <div class="small-12 medium-6 large-6 columns">
+      <span class="badge f5">5</span>
+      <span data-tooltip aria-haspopup="true" class="has-tip" title="Tooltips are awesome, you should totally use them!">extended information</span><br /><br />
+      <span class="badge f6">6</span>
+      <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Fancy word for a beetle.">scarabaeus</span> 
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="tooltip-tabs">
+        <li class="tabs-title is-active"><a href="#tooltip1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#tooltip2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="tooltip-tabs">
+              <div class="tabs-panel is-active" id="tooltip1">
+                <pre><code>
+&lt;span data-tooltip aria-haspopup=&quot;true&quot; class=&quot;has-tip&quot; title=&quot;Tooltips are awesome, you should totally use them!&quot;&gt;extended information&lt;/span&gt;
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="tooltip2">
+                <pre><code>
+&lt;span data-tooltip aria-haspopup=&quot;true&quot; class=&quot;has-tip&quot; <span class="highlight">data-disable-hover='false'</span> title=&quot;Fancy word for a beetle.&quot;&gt;scarabaeus&lt;/span&gt; 
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+<div class="row"><hr/>
+  <h1 id="top-bar">Top Bar</h1>
+  
+      <span class="badge f5">5</span>
+      <nav class="top-bar show-for-medium" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">My Site</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active"><a href="#">Right Button Active</a></li>
+      <li class="has-dropdown">
+        <a href="#">Right Button Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+          <li class="active"><a href="#">Active link in dropdown</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a href="#">Left Nav Button</a></li>
+    </ul>
+  </section>
+</nav>
+      <span class="badge f6">6</span>
+      <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+      </div>
+
+      <div class="top-bar" id="main-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">Site Title</li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+            <li class="has-submenu">
+              <a href="#">One</a>
+              <ul class="submenu menu vertical" data-submenu>
+                <li><a href="#">One</a></li>
+                <li><a href="#">Two</a></li>
+                <li><a href="#">Three</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Two</a></li>
+            <li><a href="#">Three</a></li>
+          </ul>
+        </div>
+      </div>
+    <br/>
+    <div class="small-12 medium-6 large-6 columns">
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="topbar-tabs">
+        <li class="tabs-title is-active"><a href="#topbar1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#topbar2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="topbar-tabs">
+              <div class="tabs-panel is-active" id="topbar1">
+                <pre><code>
+&lt;<span class="lowlight">nav</span> class=&quot;top-bar&quot; <span class="lowlight">data-topbar role=&quot;navigation&quot;</span>&gt;
+  &lt;ul class=&quot;title-<span class="lowlight">area</span>&quot;&gt;
+    &lt;li class=&quot;<span class="lowlight">name</span>&quot;&gt;
+      &lt;h1&gt;&lt;a href=&quot;#&quot;&gt;My Site&lt;/a&gt;&lt;/h1&gt;
+    &lt;/li&gt;
+    <span class="lowlight">&lt;li class=&quot;toggle-topbar menu-icon&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;span&gt;Menu&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+  &lt;/ul&gt;
+  <span class="lowlight">&lt;section class=&quot;top-bar-section&quot;&gt;</span>
+    &lt;ul class=&quot;right&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Right Button Active&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;<span class="lowlight">has-dropdown</span>&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;Right Button Dropdown&lt;/a&gt;
+        &lt;ul class=&quot;dropdown&quot;&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;First link in dropdown&lt;/a&gt;&lt;/li&gt;
+          &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Active link in dropdown&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class=&quot;left&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Left Nav Button&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  <span class="lowlight">&lt;/section&gt;</span>
+<span class="lowlight">&lt;/nav&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="topbar2">
+                <pre><code>
+<span class="highlight">&lt;div class=&quot;title-bar&quot; data-responsive-toggle=&quot;main-menu&quot; data-hide-for=&quot;medium&quot;&gt;
+  &lt;button class=&quot;menu-icon&quot; type=&quot;button&quot; data-toggle&gt;&lt;/button&gt;
+  &lt;div class=&quot;title<span class="highlight">-bar-title</span>&quot;&gt;Menu&lt;/div&gt;
+&lt;/div&gt;</span>
+&lt;div class=&quot;top-bar&quot; <span class="highlight">id=&quot;main-menu&quot;</span>&gt;
+  &lt;div class=&quot;<span class="highlight">top-bar-</span>left&quot;&gt;
+    &lt;ul class=&quot;dropdown menu&quot; data-dropdown-menu&gt;
+      &lt;li class=&quot;<span class="highlight">menu-text</span>&quot;&gt;Site Title&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;<span class="highlight">top-bar-</span>right&quot;&gt;
+    &lt;ul <span class="highlight">class=&quot;menu&quot; data-responsive-menu=&quot;drilldown medium-dropdown&quot;</span>&gt;
+      &lt;li class=&quot;<span class="highlight">has-submenu</span>&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;
+        &lt;ul <span class="highlight">class=&quot;submenu menu vertical&quot; data-submenu</span>&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;One&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+<span class="highlight">&lt;/div&gt;</span>
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="v-card"><span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' title="Removed Item"><i class="fa fa-trash"></i></span> V Card</h1>
+  <div class="small-12 medium-6 large-6 columns">
+     <ul class="vcard">
+        <li class="fn">Gaius Baltar</li>
+        <li class="street-address">123 Colonial Ave.</li>
+        <li class="locality">Caprica City</li>
+        <li><span class="state">Caprica</span>, <span class="zip">12345</span></li>
+        <li class="email"><a href="#">g.baltar@example.com</a></li>
+      </ul>
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="vcard-tabs">
+        <li class="tabs-title is-active"><a href="#vcard1" aria-selected="true">Foundation 5</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="vcard-tabs">
+              <div class="tabs-panel is-active" id="vcard1">
+                <pre><code>
+&lt;ul class=&quot;vcard&quot;&gt;
+  &lt;li class=&quot;fn&quot;&gt;Gaius Baltar&lt;/li&gt;
+  &lt;li class=&quot;street-address&quot;&gt;123 Colonial Ave.&lt;/li&gt;
+  &lt;li class=&quot;locality&quot;&gt;Caprica City&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;state&quot;&gt;Caprica&lt;/span&gt;, &lt;span class=&quot;zip&quot;&gt;12345&lt;/span&gt;&lt;/li&gt;
+  &lt;li class=&quot;email&quot;&gt;&lt;a href=&quot;#&quot;&gt;g.baltar@example.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+
+
+
+<div class="row"><hr/>
+  <h1 id="visibility">Visibility Classes</h1>
+  <div class="small-12 medium-6 large-6 columns">
+    <span class="badge f5">5</span>
+    <p class="panel">
+      <strong class="show-for-small-only">This text is shown only on a small screen.</strong>
+      <strong class="show-for-medium-up">This text is shown on medium screens and up.</strong>
+      <strong class="show-for-medium-only">This text is shown only on a medium screen.</strong>
+      <strong class="show-for-large-up">This text is shown on large screens and up.</strong>
+      <strong class="show-for-large-only">This text is shown only on a large screen.</strong>
+      <strong class="show-for-xlarge-up">This text is shown on xlarge screens and up.</strong>
+      <strong class="show-for-xlarge-only">This text is shown only on an xlarge screen.</strong>
+      <strong class="show-for-xxlarge-up">This text is shown on xxlarge screens and up.</strong>
+    </p>
+
+    <p class="panel">
+      <strong class="hide-for-small-only">You are <em>not</em> on a small screen.</strong>
+      <strong class="hide-for-medium-up">You are <em>not</em> on a medium, large, xlarge, or xxlarge screen.</strong>
+      <strong class="hide-for-medium-only">You are <em>not</em> on a medium screen.</strong>
+      <strong class="hide-for-large-up">You are <em>not</em> on a large, xlarge, or xxlarge screen.</strong>
+      <strong class="hide-for-large-only">You are <em>not</em> on a large screen.</strong>
+      <strong class="hide-for-xlarge-up">You are <em>not</em> on an xlarge screen and up.</strong>
+      <strong class="hide-for-xlarge-only">You are <em>not</em> on an xlarge screen.</strong>
+      <strong class="hide-for-xxlarge-up">You are <em>not</em> on an xxlarge screen.</strong>
+    </p>
+
+
+    <span class="badge f6">6</span>
+      <p>You are on a small screen or larger.</p>
+      <p class="show-for-medium">You are on a medium screen or larger.</p>
+      <p class="show-for-large">You are on a large screen or larger.</p>
+      <p class="show-for-small-only">You are <em>definitely</em> on a small screen.</p>
+      <p class="show-for-medium-only">You are <em>definitely</em> on a medium screen.</p>
+      <p class="show-for-large-only">You are <em>definitely</em> on a large screen.</p>
+
+      <p class="hide-for-medium">You are <em>not</em> on a medium screen or larger.</p>
+      <p class="hide-for-large">You are <em>not</em> on a large screen or larger.</p>
+      <p class="hide-for-small-only">You are <em>definitely not</em> on a small screen.</p>
+      <p class="hide-for-medium-only">You are <em>definitely not</em> on a medium screen.</p>
+      <p class="hide-for-large-only">You are <em>definitely not</em> on a large screen.</p>
+      <p class="hide">Can't touch this.</p>
+
+      <p class="invisible">Can sort of touch this.</p>
+
+      <p class="show-for-landscape">You are in landscape orientation.</p>
+      <p class="show-for-portrait">You are in portrait orientation.</p>
+
+      <p class="show-for-sr">This text can only be read by a screen reader.</p>
+      <p>There's a line of text above this one, you just can't see it.</p>
+  </div>
+
+  <div class="small-12 medium-6 large-6 columns">
+      <ul class="tabs" data-tabs id="visible-tabs">
+        <li class="tabs-title is-active"><a href="#visible1" aria-selected="true">Foundation 5</a></li>
+        <li class="tabs-title"><a href="#visible2" aria-selected="true">Foundation 6</a></li>
+      </ul>
+
+
+            <div class="tabs-content" data-tabs-content="visible-tabs">
+              <div class="tabs-panel is-active" id="visible1">
+                <pre><code>
+&lt;strong class=&quot;show-for-small-only&quot;&gt;This text is shown only on a small screen.&lt;/strong&gt;
+&lt;strong class=&quot;show-for-medium<span class="lowlight">-up</span>&quot;&gt;This text is shown on medium screens and up.&lt;/strong&gt;
+&lt;strong class=&quot;show-for-medium-only&quot;&gt;This text is shown only on a medium screen.&lt;/strong&gt;
+&lt;strong class=&quot;show-for-large<span class="lowlight">-up</span>&quot;&gt;This text is shown on large screens and up.&lt;/strong&gt;
+&lt;strong class=&quot;show-for-large-only&quot;&gt;This text is shown only on a large screen.&lt;/strong&gt;
+<span class="lowlight">&lt;strong class=&quot;show-for-xlarge-up&quot;&gt;This text is shown on xlarge screens and up.&lt;/strong&gt;</span>
+<span class="lowlight">&lt;strong class=&quot;show-for-xlarge-only&quot;&gt;This text is shown only on an xlarge screen.&lt;/strong&gt;</span>
+<span class="lowlight">&lt;strong class=&quot;show-for-xxlarge-up&quot;&gt;This text is shown on xxlarge screens and up.&lt;/strong&gt;</span>
+&lt;strong class=&quot;hide-for-small-only&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a small screen.&lt;/strong&gt;
+&lt;strong class=&quot;hide-for-medium<span class="lowlight">-up</span>&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a medium, large, xlarge, or xxlarge screen.&lt;/strong&gt;
+&lt;strong class=&quot;hide-for-medium-only&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a medium screen.&lt;/strong&gt;
+&lt;strong class=&quot;hide-for-large<span class="lowlight">-up</span>&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a large, xlarge, or xxlarge screen.&lt;/strong&gt;
+&lt;strong class=&quot;hide-for-large-only&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a large screen.&lt;/strong&gt;
+<span class="lowlight">&lt;strong class=&quot;hide-for-xlarge-up&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on an xlarge screen and up.&lt;/strong&gt;</span>
+<span class="lowlight">&lt;strong class=&quot;hide-for-xlarge-only&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on an xlarge screen.&lt;/strong&gt;</span>
+<span class="lowlight">&lt;strong class=&quot;hide-for-xxlarge-up&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on an xxlarge screen.&lt;/strong&gt;</span>
+                </code></pre>
+              </div>
+              <div class="tabs-panel" id="visible2">
+                <pre><code>
+&lt;p&gt;You are on a small screen or larger.&lt;/p&gt;
+&lt;p class=&quot;show-for-medium&quot;&gt;You are on a medium screen or larger.&lt;/p&gt;
+&lt;p class=&quot;show-for-large&quot;&gt;You are on a large screen or larger.&lt;/p&gt;
+&lt;p class=&quot;show-for-small-only&quot;&gt;You are &lt;em&gt;definitely&lt;/em&gt; on a small screen.&lt;/p&gt;
+&lt;p class=&quot;show-for-medium-only&quot;&gt;You are &lt;em&gt;definitely&lt;/em&gt; on a medium screen.&lt;/p&gt;
+&lt;p class=&quot;show-for-large-only&quot;&gt;You are &lt;em&gt;definitely&lt;/em&gt; on a large screen.&lt;/p&gt;
+&lt;p class=&quot;hide-for-medium&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a medium screen or larger.&lt;/p&gt;
+&lt;p class=&quot;hide-for-large&quot;&gt;You are &lt;em&gt;not&lt;/em&gt; on a large screen or larger.&lt;/p&gt;
+&lt;p class=&quot;hide-for-small-only&quot;&gt;You are &lt;em&gt;definitely not&lt;/em&gt; on a small screen.&lt;/p&gt;
+&lt;p class=&quot;hide-for-medium-only&quot;&gt;You are &lt;em&gt;definitely not&lt;/em&gt; on a medium screen.&lt;/p&gt;
+&lt;p class=&quot;hide-for-large-only&quot;&gt;You are &lt;em&gt;definitely not&lt;/em&gt; on a large screen.&lt;/p&gt;
+&lt;p class=&quot;hide&quot;&gt;Can't touch this.&lt;/p&gt;
+<span class="highlight">&lt;p class=&quot;invisible&quot;&gt;Can sort of touch this.&lt;/p&gt;</span>
+&lt;p class=&quot;show-for-landscape&quot;&gt;You are in landscape orientation.&lt;/p&gt;
+&lt;p class=&quot;show-for-portrait&quot;&gt;You are in portrait orientation.&lt;/p&gt;
+<span class="highlight">&lt;p class=&quot;show-for-sr&quot;&gt;This text can only be read by a screen reader.&lt;/p&gt;</span>
+&lt;p&gt;There's a line of text above this one, you just can't see it.&lt;/p&gt;
+                </code></pre>
+              </div>
+            </div>
+  </div>
+</div>
+    <script src="js/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript">
+    $('#nav-click').on('click', function(){
+      $('#slideout').toggleClass('slide-open');
+      $('#slideout_inner').toggleClass('open');
+    })
+
+      $(document).foundation();
+    </script>
+  </body>
+</html>
