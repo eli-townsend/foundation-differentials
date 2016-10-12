@@ -1,1 +1,2 @@
 # foundation-differential
+Foundation is a great framework with everything you need out of the box. Moving to Foundation 6, most of the file size was reduced to make it more managable to download all components. Here is a guide to show what components have changed and how. If they did not change, they are not displayed. The Javascript only works for the Foundation 6 components even though the Foundation 5 components are displayed for visuals. 
